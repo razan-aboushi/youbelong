@@ -25,4 +25,14 @@ class SiteController extends Controller
     {
         return view('feedback');
     }
+    
+    public function termsAndConditions()
+    {
+        return view('terms-and-conditions');
+    }
+    
+    public function privacyPolicy()
+    {
+        return view('privacy-policy');
+    }
 }
