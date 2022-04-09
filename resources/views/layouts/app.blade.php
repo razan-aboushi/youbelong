@@ -30,23 +30,22 @@
 
         @include('partials.site-footer')
 
-		<!-- JS here -->
-        <script src={{ asset( "js/jquery-3.5.0.min.js") }} ) }}></script>
-        <script src={{ asset( "js/popper.min.js") }}></script>
-        <script src={{ asset( "js/bootstrap.min.js") }}></script>
-        <script src={{ asset( "js/isotope.pkgd.min.js") }}></script>
-        <script src={{ asset( "js/imagesloaded.pkgd.min.js") }}></script>
-        <script src={{ asset( "js/jquery.magnific-popup.min.js") }}></script>
-        <script src={{ asset( "js/owl.carousel.min.js") }}></script>
-        <script src={{ asset( "js/jquery.odometer.min.js") }}></script>
-        <script src={{ asset( "js/bootstrap-datepicker.min.js") }}></script>
-        <script src={{ asset( "js/jquery.appear.js") }}></script>
-        <script src={{ asset( "js/js_jquery.knob.js") }}></script>
-        <script src={{ asset( "js/slick.min.js") }}></script>
-        <script src={{ asset( "js/ajax-form.js") }}></script>
-        <script src={{ asset( "js/wow.min.js") }}></script>
-        <script src={{ asset( "js/aos.js") }}></script>
-        <script src={{ asset( "js/plugins.js") }}></script>
-        <script src={{ asset( "js/main.js") }}></script>
+        <script src={{ asset("js/jquery-3.5.0.min.js") }} ) }}></script>
+        <script src={{ asset("js/popper.min.js") }}></script>
+        <script src={{ asset("js/bootstrap.min.js") }}></script>
+        <script src={{ asset("js/isotope.pkgd.min.js") }}></script>
+        <script src={{ asset("js/imagesloaded.pkgd.min.js") }}></script>
+        <script src={{ asset("js/jquery.magnific-popup.min.js") }}></script>
+        <script src={{ asset("js/owl.carousel.min.js") }}></script>
+        <script src={{ asset("js/jquery.odometer.min.js") }}></script>
+        <script src={{ asset("js/bootstrap-datepicker.min.js") }}></script>
+        <script src={{ asset("js/jquery.appear.js") }}></script>
+        <script src={{ asset("js/js_jquery.knob.js") }}></script>
+        <script src={{ asset("js/slick.min.js") }}></script>
+        <script src={{ asset("js/ajax-form.js") }}></script>
+        <script src={{ asset("js/wow.min.js") }}></script>
+        <script src={{ asset("js/aos.js") }}></script>
+        <script src={{ asset("js/plugins.js") }}></script>
+        <script src={{ asset("js/main.js") }}></script>
     </body>
 </html>

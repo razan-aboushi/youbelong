@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-9">
                     <div class="footer-widget mb-50">
-                        <div class="footer-logo mb-35">
-                            <a href="{{ route('home') }}"><img src="img/logo/w_logo.png" alt=""></a>
+                        <div class="fw-title mb-40">
+                            <h4 class="title">You Belong</h4>
                         </div>
                         <div class="footer-text mb-35">
                             <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="footer-widget pt-30 mb-50">
+                    <div class="footer-widget mb-50">
                         <div class="fw-title mb-40">
                             <h4 class="title">related Links</h4>
                         </div>

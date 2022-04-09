@@ -31,33 +31,6 @@
     </section>
     <!-- slider-area-end -->
 
-    <!-- cta-form-area -->
-    <div class="cta-form-area slider-x-margin">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <form action="#" class="cta-form">
-                        <h5>REQUEST fore A SERVICE TODAY</h5>
-                        <div class="form-grp">
-                            <i class="fal fa-user"></i>
-                            <input type="text" name="name" placeholder="Enter your name">
-                        </div>
-                        <div class="form-grp">
-                            <i class="fal fa-envelope"></i>
-                            <input type="email" name="email" placeholder="Enter your email">
-                        </div>
-                        <div class="form-grp">
-                            <i class="fal fa-phone"></i>
-                            <input type="text" placeholder="Enter your phone">
-                        </div>
-                        <button class="btn"><i class="fal fa-paper-plane"></i>submit Now</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- cta-form-area-end -->
-
     <!-- about-us-area -->
     <section class="about-us-area pt-120">
         <div class="container">
@@ -69,7 +42,7 @@
                         me an introduction to palliative care</h2>
                     </div>
                     <div class="about-us-btn">
-                        <a href="#" class="btn">Our Services <i class="fal fa-angle-down"></i></a>
+                        <a href="{{ route('about-us') }}" class="btn">Read More <i class="fal fa-angle-down"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -435,50 +408,6 @@
         </div>
     </section>
     <!-- testimonial-area-end -->
-
-    <!-- brand-area -->
-    <div class="brand-area gray-bg pt-120 pb-90">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="brand-item mb-30">
-                        <a href="#"><img src="img/brand/brand_logo01.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="brand-item active mb-30">
-                        <a href="#"><img src="img/brand/brand_logo02.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="brand-item mb-30">
-                        <a href="#"><img src="img/brand/brand_logo03.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="brand-item mb-30">
-                        <a href="#"><img src="img/brand/brand_logo04.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="brand-item mb-30">
-                        <a href="#"><img src="img/brand/brand_logo05.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="brand-item mb-30">
-                        <a href="#"><img src="img/brand/brand_logo06.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="brand-item mb-30">
-                        <a href="#"><img src="img/brand/brand_logo07.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- brand-area-end -->
 
     <!-- blog-area -->
     <section class="blog-area pt-120 pb-70">

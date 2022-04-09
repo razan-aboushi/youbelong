@@ -13,12 +13,25 @@
                                     <li><a href="{{ route('feedback') }}">Feedback</a></li>
                                 </ul>
                             </div>
+                            @if (Route::has('login'))
+                                <div class="header-top-action d-none d-md-block">
+                                    <ul>
+                                        @auth
+                                            <li class="header-login"><a href="#">Profile</a></li>
+                                        @else 
+                                            <li class="header-auth"><a href="{{ route('register') }}">Register</a></li>
+                                            <li class="header-login"><a href="{{ route('login') }}">Login</a></li>
+                                        @endif
+                                    </ul>
+                                </div>
+                            @endif
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div id="header-sticky-two" class="main-header menu-area">
         <div class="container">
             <div class="row">
@@ -48,7 +61,7 @@
                                         </div>
                                         <div class="h-contact-content">
                                             <h5>Phone Number</h5>
-                                            <span>+123456789</span>
+                                            <span>+962 780577727</span>
                                         </div>
                                     </div>
                                 </li>
@@ -86,7 +99,7 @@
                                             </div>
                                             <div class="h-contact-content">
                                                 <h5>Phone Number</h5>
-                                                <span>+123456789</span>
+                                                <span>+962 780577727</span>
                                             </div>
                                         </div>
                                     </li>
