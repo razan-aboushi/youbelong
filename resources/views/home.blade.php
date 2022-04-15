@@ -9,7 +9,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="slider-content text-center">
-                                <h2 data-animation="fadeInUp" data-delay=".3s">Senior <span class="icon"><i class="fas fa-heart"></i></span> care</h2>
+                                <h3 data-animation="fadeInUp" data-delay=".3s">You can't always be there</h3>
+                                <h2 data-animation="fadeInUp" data-delay=".3s">But we can</h2>
                             </div>
                         </div>
                     </div>
@@ -21,7 +22,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="slider-content text-center">
-                                <h2 data-animation="fadeInUp" data-delay=".3s">Senior <span class="icon"><i class="fas fa-heart"></i></span> care</h2>
+                                <h2 data-animation="fadeInUp" data-delay=".3s">Extraordinary Every day</h2>
                             </div>
                         </div>
                     </div>
@@ -38,8 +39,7 @@
                 <div class="col-lg-6">
                     <div class="section-title pr-80 mb-50">
                         <h6 class="sub-title">about us</h6>
-                        <h2 class="title">thank you for noticing
-                        me an introduction to palliative care</h2>
+                        <h2 class="title">Drop by drop can generate a river of goodness</h2>
                     </div>
                     <div class="about-us-btn">
                         <a href="{{ route('about-us') }}" class="btn">Read More <i class="fal fa-angle-down"></i></a>
@@ -48,31 +48,7 @@
                 <div class="col-lg-6">
                     <div class="about-us-content">
                         <div class="about-inner-wrap">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim ven iam, quis nostrud exercitation ullamco laboris.</p>
-                            <h5>AIvon D. Bruce /Founder</h5>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="about-cat-item">
-                                    <div class="about-cat-icon">
-                                        <i class="flaticon-heart-2"></i>
-                                    </div>
-                                    <div class="about-cat-content">
-                                        <h5>Daily heart checkup</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="about-cat-item">
-                                    <div class="about-cat-icon">
-                                        <i class="flaticon-heart-3"></i>
-                                    </div>
-                                    <div class="about-cat-content">
-                                        <h5>timely food & medicine</h5>
-                                    </div>
-                                </div>
-                            </div>
+                            <p>Financial and psychological support is very important for any of us, how if he is one of the elderly who have been left without a helper or child, the feeling of deprivation and inferiority and that they are not part of society in addition to being dependent on everyone, it can cause them depression and psychological pressure; That is why we wanted to tell them that we are by their side, provide material and moral support, and restore the feeling of love and affection for them, and that they belong to us, as they are not part of the society, but rather they are the entire society.</p>
                         </div>
                     </div>
                 </div>
@@ -268,26 +244,30 @@
                     </div>
                     <div class="faq-wrap">
                         <div class="faq-set">
-                            <a class="active" href="#"><i class="fal fa-minus"></i> how to edit this wordpress theme?</a>
+                            <a class="active" href="#"><i class="fal fa-minus"></i> Is the electronic donation feature available?</a>
                             <div class="content" style="display: block;">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sedo eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                <p>No, but you can donate through any bank branch close to you to an account number for the care home if it has one, or from E-Fawateercom.</p>
                             </div>
                         </div>
                         <div class="faq-set">
-                            <a href="#"><i class="fal fa-plus"></i> How can i make refund from this site?</a>
+                            <a href="#"><i class="fal fa-plus"></i> Is my data safe? And can I modify it?</a>
                             <div class="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sedo eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                <p>Yes, the data is kept secure through the website and no one but you can view it, in addition to the possibility of modifying your account data.</p>
                             </div>
                         </div>
                         <div class="faq-set">
-                            <a href="#"><i class="fal fa-plus"></i> how to customize & how to edit?</a>
+                            <a href="#"><i class="fal fa-plus"></i> What is this website and why is it there?</a>
                             <div class="content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sedo eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                                <p>You can find out who we are and the importance of the website and its goals by clicking on about us located at the top of the site.</p>
                             </div>
                         </div>
+                        <div class="faq-set">
+                            <a href="#"><i class="fal fa-plus"></i> How can I contact the nursing home for the elderly?</a>
+                            <div class="content">
+                                <p>You can contact the care home through a message request directly from the website, where you write the message and your personal information so that the care home will answer you through it. Or through the care home information on their page, such as their phone number.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -497,26 +477,4 @@
     </section>
     <!-- blog-area-end -->
 
-    <!-- free-quote-area -->
-    <div class="free-quote-area">
-        <div class="container">
-            <div class="free-quote-wrap">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-lg-6">
-                        <div class="free-quote-img" data-background="img/images/free_quote_img.jpg"></div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="free-quote-content">
-                            <h4>Get free quote</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="free-quote-icon"><i class="flaticon-headphones"></i></div>
-            </div>
-        </div>
-    </div>
-    <!-- free-quote-area-end -->
-
-@endsection
+    @endsection

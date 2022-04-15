@@ -10,7 +10,8 @@
                                     <li><a href="{{ route('home') }}">Home</a></li>
                                     <li><a href="{{ route('about-us') }}">About</a></li>
                                     <li><a href="{{ route('contact-us') }}">Contacts</a></li>
-                                    <li><a href="{{ route('feedback') }}">Feedback</a></li>
+                                    <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
+                                    <li><a href="{{ route('news') }}">News</a></li>
                                 </ul>
                             </div>
                             @if (Route::has('login'))

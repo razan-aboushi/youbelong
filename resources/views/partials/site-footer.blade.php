@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer-top-area theme-bg pt-180 pb-50">
+    <div class="footer-top-area theme-bg pt-70 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-9">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="footer-widget mb-50">
+                    <div class="footer-widget">
                         <div class="fw-title mb-40">
                             <h4 class="title">related Links</h4>
                         </div>
@@ -30,7 +30,8 @@
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="{{ route('about-us') }}">About</a></li>
                                 <li><a href="{{ route('contact-us') }}">Contacts</a></li>
-                                <li><a href="{{ route('feedback') }}">Feedback</a></li>
+                                <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
+                                <li><a href="{{ route('news') }}">News</a></li>
                                 <li><a href="{{ route('terms-and-conditions') }}">terms & codtions</a></li>
                                 <li><a href="{{ route('privacy-policy') }}">privacy policy</a></li>
                             </ul>

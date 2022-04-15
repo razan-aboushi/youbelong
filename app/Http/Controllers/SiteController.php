@@ -20,11 +20,6 @@ class SiteController extends Controller
     {
         return view('contact-us');
     }
-
-    public function feedback()
-    {
-        return view('feedback');
-    }
     
     public function termsAndConditions()
     {
@@ -34,5 +29,15 @@ class SiteController extends Controller
     public function privacyPolicy()
     {
         return view('privacy-policy');
+    }
+
+    public function news()
+    {
+        return view('news');
+    }
+
+    public function careHomes()
+    {
+        return view('care-homes');
     }
 }

@@ -19,6 +19,9 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\SiteController::class, 'home'])->name('home');
 Route::get('/about-us', [App\Http\Controllers\SiteController::class, 'aboutUs'])->name('about-us');
 Route::get('/contact-us', [App\Http\Controllers\SiteController::class, 'contactUs'])->name('contact-us');
-Route::get('/feedback', [App\Http\Controllers\SiteController::class, 'feedback'])->name('feedback');
+Route::get('/care-homes', [App\Http\Controllers\SiteController::class, 'careHomes'])->name('care-homes');
+Route::get('/news', [App\Http\Controllers\SiteController::class, 'news'])->name('news');
+
+
 Route::get('/terms-and-conditions', [App\Http\Controllers\SiteController::class, 'termsAndConditions'])->name('terms-and-conditions');
 Route::get('/privacy-policy', [App\Http\Controllers\SiteController::class, 'privacyPolicy'])->name('privacy-policy');
