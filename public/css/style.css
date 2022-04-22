@@ -239,7 +239,7 @@ label {
     letter-spacing: 0;
     line-height: 1;
     margin-bottom: 0;
-    padding: 21px 45px 21px 45px;
+    padding: 16px 40px;
     text-align: center;
     text-transform: uppercase;
     touch-action: manipulation;
@@ -250,6 +250,10 @@ label {
     white-space: nowrap;
     overflow: hidden;
     z-index: 1;
+}
+
+label.col-md-4.col-form-label {
+    text-align: right;
 }
 
 .btn::before {
@@ -394,7 +398,7 @@ label {
 .rp-content h4 a:hover,
 .comment-text .avatar-name .comment-reply:hover,
 .comment-form .comment-field i {
-    color: #40e0d0;
+    color: #29b0a2;
 }
 
 /* All Background */

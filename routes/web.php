@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+# register routes
 Auth::routes();
+Route::get('/register/{role?}', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 
 # website routes
 Route::get('/', [App\Http\Controllers\SiteController::class, 'home'])->name('home');
@@ -21,7 +23,6 @@ Route::get('/about-us', [App\Http\Controllers\SiteController::class, 'aboutUs'])
 Route::get('/contact-us', [App\Http\Controllers\SiteController::class, 'contactUs'])->name('contact-us');
 Route::get('/care-homes', [App\Http\Controllers\SiteController::class, 'careHomes'])->name('care-homes');
 Route::get('/news', [App\Http\Controllers\SiteController::class, 'news'])->name('news');
-
 
 Route::get('/terms-and-conditions', [App\Http\Controllers\SiteController::class, 'termsAndConditions'])->name('terms-and-conditions');
 Route::get('/privacy-policy', [App\Http\Controllers\SiteController::class, 'privacyPolicy'])->name('privacy-policy');

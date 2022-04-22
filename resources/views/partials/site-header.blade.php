@@ -19,8 +19,14 @@
                                     <ul>
                                         @auth
                                             <li class="header-login"><a href="#">Profile</a></li>
+                                            <li class="header-login">
+                                                <a href="#" onclick="$('#logout').submit();">Logout</a>
+                                                <form id="logout" method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                </form>
+                                            </li>
                                         @else 
-                                            <li class="header-auth"><a href="{{ route('register') }}">Register</a></li>
+                                            <li class="header-auth"><a href="{{ route('register') }}">Sign Up</a></li>
                                             <li class="header-login"><a href="{{ route('login') }}">Login</a></li>
                                         @endif
                                     </ul>
@@ -40,14 +46,14 @@
                     <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
                     <div class="d-block d-lg-flex align-items-center">
                         <div class="logo">
-                            <a href="{{ route('home') }}"><img src="img/logo/logo.png" alt=""></a>
+                            <a href="{{ route('home') }}"><img src="{{asset('img/logo/logo.png')}}" alt=""></a>
                         </div>
                         <div class="main-header-contact d-none d-lg-block">
                             <ul>
                                 <li>
                                     <div class="header-contact-box">
                                         <div class="h-contact-icon">
-                                            <img src="img/icon/envelope.png" alt="">
+                                            <img src="{{ asset('img/icon/envelope.png') }}" alt="">
                                         </div>
                                         <div class="h-contact-content">
                                             <h5>email address</h5>
@@ -58,7 +64,7 @@
                                 <li>
                                     <div class="header-contact-box">
                                         <div class="h-contact-icon">
-                                            <img src="img/icon/phone.png" alt="">
+                                            <img src="{{ asset('img/icon/phone.png') }}" alt="">
                                         </div>
                                         <div class="h-contact-content">
                                             <h5>Phone Number</h5>
@@ -75,7 +81,8 @@
 
                         <nav class="menu-box">
                             <div class="close-btn"><i class="fal fa-times"></i></div>
-                            <div class="nav-logo"><a href="{{ route('home') }}"><img src="img/logo/logo.png" alt="" title=""></a>
+                            <div class="nav-logo"><a href="{{ route('home') }}">
+                                <img src="{{ asset('img/logo/logo.png') }}" alt="" title=""></a>
                             </div>
                             <div class="menu-outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -85,7 +92,7 @@
                                     <li>
                                         <div class="header-contact-box">
                                             <div class="h-contact-icon">
-                                                <img src="img/icon/envelope.png" alt="">
+                                                <img src="{{ asset('img/icon/envelope.png') }}" alt="">
                                             </div>
                                             <div class="h-contact-content">
                                                 <h5>email address</h5>
@@ -96,7 +103,7 @@
                                     <li>
                                         <div class="header-contact-box">
                                             <div class="h-contact-icon">
-                                                <img src="img/icon/phone.png" alt="">
+                                                <img src="{{ asset('img/icon/phone.png') }}" alt="">
                                             </div>
                                             <div class="h-contact-content">
                                                 <h5>Phone Number</h5>

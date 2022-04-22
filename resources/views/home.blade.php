@@ -171,7 +171,7 @@
                             <div class="icon">
                                 <img src="img/icon/fact_icon01.png" alt="">
                             </div>
-                            <h2><span class="odometer" data-count="80">00</span></h2>
+                            <h2><span class="odometer" data-count="100">00</span></h2>
                         </div>
                         <div class="fact-content">
                             <h4>country coverage</h4>
@@ -284,7 +284,7 @@
                     <div class="testimonial-active">
                         <div class="testimonial-item">
                             <div class="testimonial-thumb">
-                                <img src="img/images/testi_img.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_img.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-content">
                                 <div class="testi-quote-icon">
@@ -299,7 +299,7 @@
                         </div>
                         <div class="testimonial-item">
                             <div class="testimonial-thumb">
-                                <img src="img/images/testi_img.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_img.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-content">
                                 <div class="testi-quote-icon">
@@ -314,7 +314,7 @@
                         </div>
                         <div class="testimonial-item">
                             <div class="testimonial-thumb">
-                                <img src="img/images/testi_img.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_img.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-content">
                                 <div class="testi-quote-icon">
@@ -329,7 +329,7 @@
                         </div>
                         <div class="testimonial-item">
                             <div class="testimonial-thumb">
-                                <img src="img/images/testi_img.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_img.jpg') }}" alt="">
                             </div>
                             <div class="testimonial-content">
                                 <div class="testi-quote-icon">
@@ -348,7 +348,7 @@
                     <div class="testi-avatar-active">
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar01.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_avatar01.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 <span>founder</span>
@@ -357,7 +357,7 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar02.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_avatar02.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 <span>founder</span>
@@ -366,7 +366,7 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar03.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_avatar03.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 <span>founder</span>
@@ -375,7 +375,7 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="img/images/testi_avatar03.jpg" alt="">
+                                <img src="{{ asset('img/images/testi_avatar03.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 <span>founder</span>
@@ -407,7 +407,7 @@
                     <div class="blog-post-item bp-style-one mb-50">
                         <div class="blog-post-thumb">
                             <a href="blog-details.html">
-                                <img src="img/blog/blog_thumb01.jpg" alt="">
+                                <img src="{{ asset('img/blog/blog_thumb01.jpg') }}" alt="">
                                 <div class="overlay-post-date">23 <span>jan</span></div>
                             </a>
                         </div>
@@ -420,7 +420,7 @@
                             <h2><a href="blog-details.html">Lorem ipsum dolor sit am et, consectetur</a></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                             <div class="blog-post-avatar">
-                                <div class="thumb"><img src="img/blog/blog_post_avatar.jpg" alt=""></div>
+                                <div class="thumb"><img src="{{ asset('img/blog/blog_post_avatar.jpg') }}" alt=""></div>
                                 <div class="info"><h6>Posted By <a href="#">Will smith</a></h6></div>
                             </div>
                         </div>
@@ -430,7 +430,7 @@
                     <div class="blog-post-item bp-style-one mb-50">
                         <div class="blog-post-thumb">
                             <a href="blog-details.html">
-                                <img src="img/blog/blog_thumb02.jpg" alt="">
+                                <img src="{{ asset('img/blog/blog_thumb02.jpg') }}" alt="">
                                 <div class="overlay-post-date">20 <span>jan</span></div>
                             </a>
                         </div>
@@ -443,7 +443,7 @@
                             <h2><a href="blog-details.html">Lorem ipsum dolor sit am et, consectetur</a></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                             <div class="blog-post-avatar">
-                                <div class="thumb"><img src="img/blog/blog_post_avatar.jpg" alt=""></div>
+                                <div class="thumb"><img src="{{ asset('img/blog/blog_post_avatar.jpg') }}" alt=""></div>
                                 <div class="info"><h6>Posted By <a href="#">Will smith</a></h6></div>
                             </div>
                         </div>
@@ -466,7 +466,7 @@
                             <h2><a href="blog-details.html">Lorem ipsum dolor sit am et, consectetur</a></h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                             <div class="blog-post-avatar">
-                                <div class="thumb"><img src="img/blog/blog_post_avatar.jpg" alt=""></div>
+                                <div class="thumb"><img src="{{ asset('img/blog/blog_post_avatar.jpg') }}" alt=""></div>
                                 <div class="info"><h6>Posted By <a href="#">Will smith</a></h6></div>
                             </div>
                         </div>

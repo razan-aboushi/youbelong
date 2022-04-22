@@ -15,7 +15,6 @@
     .cta-rotate-img.cri-three {
         right: 10%;
     }
-
 }
 
 /* Extra large devices (large desktops, 1800px and up) */
@@ -877,6 +876,10 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 767.98px) {
+    label.col-md-4.col-form-label {
+        text-align: left;
+    }
+
     .transparent-header {
         top: 0;
     }

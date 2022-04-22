@@ -5,7 +5,7 @@
 <main>
     <!-- breadcrumb-area -->
     <section class="breadcrumb-area">
-        <div class="breadcrumb-bg" data-background="img/bg/about_breadcrumb_bg.jpg"></div>
+        <div class="breadcrumb-bg" data-background="{{ asset('img/bg/about_breadcrumb_bg.jpg') }}"></div>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -33,12 +33,12 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="about-img">
-                                    <img src="img/images/t_about_img01.jpg" alt="">
+                                    <img src="{{ asset('img/images/t_about_img01.jpg') }}" alt="">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="about-img">
-                                    <img src="img/images/t_about_img02.jpg" alt="">
+                                    <img src="{{ asset('img/images/t_about_img02.jpg') }}" alt="">
                                 </div>
                             </div>
                         </div>

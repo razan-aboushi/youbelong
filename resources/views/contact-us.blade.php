@@ -5,7 +5,7 @@
 <main>
     <!-- breadcrumb-area -->
     <section class="breadcrumb-area">
-        <div class="breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg"></div>
+        <div class="breadcrumb-bg" data-background="{{ asset('img/bg/breadcrumb_bg.jpg') }}"></div>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -76,7 +76,7 @@
     </div>
     <!-- contact-area-end -->
 
-    <div class="contact-map" data-background="img/bg/contact_map.jpg"></div>
+    <div class="contact-map" data-background="{{ asset('img/bg/contact_map.jpg') }}"></div>
 
     <!-- contact-area -->
     <div class="contact-info-area pb-90">
