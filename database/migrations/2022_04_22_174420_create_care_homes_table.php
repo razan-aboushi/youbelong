@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('care_homes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('elderlies_number')->nullable();
             $table->date('establishment_date')->nullable();
             $table->timestamps();

@@ -3,11 +3,11 @@
 
     <div class="col-md-6">
         <div class="form-check form-check-inline  @error('gender') is-invalid @enderror">
-            <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male" @if (old('gender') == 'male') checked @endif required>
+            <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male" @if (old('gender') == 'male') checked @endif>
             <label class="form-check-label" for="gender_male">Male</label>
         </div>
         <div class="form-check form-check-inline  @error('gender') is-invalid @enderror">
-            <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female" @if (old('gender') == 'female') checked @endif required>
+            <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female" @if (old('gender') == 'female') checked @endif>
             <label class="form-check-label" for="gender_female">Famale</label>
         </div>
         
@@ -23,7 +23,7 @@
     <label for="birthdate" class="col-md-4 col-form-label text-md-end">{{ __('Birthdate') }}</label>
 
     <div class="col-md-6">
-        <input id="birthdate" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{ old('birthdate') }}" required>
+        <input id="birthdate" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{ old('birthdate') }}">
 
         @error('birthdate')
             <span class="invalid-feedback" role="alert">

@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class SiteController extends Controller
 {
     public function home()
@@ -20,12 +18,12 @@ class SiteController extends Controller
     {
         return view('contact-us');
     }
-    
+
     public function termsAndConditions()
     {
         return view('terms-and-conditions');
     }
-    
+
     public function privacyPolicy()
     {
         return view('privacy-policy');

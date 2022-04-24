@@ -10,18 +10,17 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    
-    public static $elderlies_range = [
-        '1' => 'Less than 50',
-        '2' => '51 - 100',
-        '3' => '101 - 200',
-        '4' => 'Above 200',
-    ];
 
     protected $fillable = [
         'name',
         'email',
         'password',
+        'phone',
+        'birthdate',
+        'profile',
+        'address',
+        'gender',
+        'role_id',
     ];
 
     protected $hidden = [
@@ -35,11 +34,11 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->hasMany(Role::class);
+        return $this->belongsTo(Role::class);
     }
 
-    public function userRole()
+    public function cCareHome()
     {
-        return $this->hasOne(UserRole::class);
+        return $this->hasOne(CareHome::class);
     }
 }
