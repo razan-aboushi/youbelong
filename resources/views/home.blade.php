@@ -66,8 +66,9 @@
                         <div class="services-overlay-icon"><i class="flaticon-capsules"></i></div>
                         <div class="service-content">
                             <h6 class="count">01</h6>
-                            <h3><a href="services-details.html">medical care</a></h3>
-                            <p>Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eiusmod tempor incidid.</p>
+                            <h4><a href="services-details.html"> Events </a></h4>
+                            <p>These are events held by care homes where they put information to indicate when and where the event is, 
+                                and individuals and companies can join or cancel it</p>
                         </div>
                         <div class="service-icon">
                             <i class="flaticon-capsules"></i>
@@ -79,8 +80,9 @@
                         <div class="services-overlay-icon"><i class="flaticon-old-man"></i></div>
                         <div class="service-content">
                             <h6 class="count">02</h6>
-                            <h3><a href="services-details.html">resident care</a></h3>
-                            <p>Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eiusmod tempor incidid.</p>
+                            <h4><a href="services-details.html">Announcements</a></h4>
+                            <p>Care homes publish and express their needs, whether for basic materials or supplements, 
+                            thus to be responded to by the users who can provide them with assistance</p>
                         </div>
                         <div class="service-icon">
                             <i class="flaticon-old-man"></i>
@@ -92,8 +94,9 @@
                         <div class="services-overlay-icon"><i class="flaticon-pinwheel"></i></div>
                         <div class="service-content">
                             <h6 class="count">03</h6>
-                            <h3><a href="services-details.html">independent</a></h3>
-                            <p>Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eiusmod tempor incidid.</p>
+                            <h4><a href="services-details.html">Messages</a></h4>
+                            <p>Individuals and companies can send a message to care homes to tell them everything they want,
+                                 and also includes the sender's information so that the care homes can respond to it</p>
                         </div>
                         <div class="service-icon">
                             <i class="flaticon-pinwheel"></i>
@@ -105,8 +108,9 @@
                         <div class="services-overlay-icon"><i class="flaticon-clock"></i></div>
                         <div class="service-content">
                             <h6 class="count">04</h6>
-                            <h3><a href="services-details.html">memory care</a></h3>
-                            <p>Lorem ipsum dolor sit amet, con sectetur adipisicing elit, sed do eiusmod tempor incidid.</p>
+                            <h4><a href="services-details.html">Donations</a></h4>
+                            <p>The users can donate to care homes through the bank account numbers of these homes, 
+                                or the immediate payment system to transfer funds "Cliq" in an easy way</p>
                         </div>
                         <div class="service-icon">
                             <i class="flaticon-clock"></i>
@@ -127,31 +131,30 @@
             <div class="row justify-content-end">
                 <div class="col-lg-6">
                     <div class="section-title white-title mb-50">
-                        <h6 class="sub-title">skills</h6>
-                        <h2 class="title">Our Amenities & how it looks like</h2>
-                        <p class="title-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim ven iam, quis nostrud exercitation ullamco laboris.</p>
+                        <h2 class="title">Take care of them, for they are in a time other than their own</h2>
+                        <p class="title-paragraph">The elderly are an integral part of society and their care is a responsibility that falls on all of us...
+                             Aging lies in the soul more than it resides in the body,
+                             so we have to return them to their youth with our support for them.
+                        </br>
+                             Progress is a decision we may make once in our life,
+                                  but it lasts with us for a lifetime, 
+                                  and we have progressed towards the elderly to change their world for the better until the end of this life
+                        </p>
                     </div>
                     <div class="skill-wrap">
+                        
                         <div class="single-skill-item">
-                            <h6>Friendly companionship</h6>
-                            <div class="progress">
-                                <div class="progress-bar wow slideInLeft" data-wow-duration="2s" data-wow-delay=".2s" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
-                                    aria-valuemax="100"><span>75%</span></div>
-                            </div>
-                        </div>
-                        <div class="single-skill-item">
-                            <h6>elderly care service</h6>
+                            <h6>Elderly care service</h6>
                             <div class="progress">
                                 <div class="progress-bar wow slideInLeft" data-wow-duration="2s" data-wow-delay=".4s" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0"
-                                    aria-valuemax="100"><span>90%</span></div>
+                                    aria-valuemax="100"><span>85%</span></div>
                             </div>
                         </div>
                         <div class="single-skill-item">
-                            <h6>personal care</h6>
+                            <h6>Psychological comfort for the elderly</h6>
                             <div class="progress">
                                 <div class="progress-bar wow slideInLeft" data-wow-duration="2s" data-wow-delay=".6s" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
-                                    aria-valuemax="100"><span>65%</span></div>
+                                    aria-valuemax="100"><span>70%</span></div>
                             </div>
                         </div>
                     </div>
@@ -169,13 +172,12 @@
                     <div class="fact-item mb-50">
                         <div class="fact-top-wrap">
                             <div class="icon">
-                                <img src="img/icon/fact_icon01.png" alt="">
+                                <img src="img/icon/carehome2.jpg" alt="">
                             </div>
-                            <h2><span class="odometer" data-count="100">00</span></h2>
+                            <h2><span class="odometer" data-count="9">00</span></h2>
                         </div>
                         <div class="fact-content">
-                            <h4>country coverage</h4>
-                            <p>Lorem ipsum dolor sit amet, con etur adipisicing elit, sed do.</p>
+                            <h4>The number of elderly Care homes</h4>
                         </div>
                     </div>
                 </div>
@@ -183,13 +185,12 @@
                     <div class="fact-item mb-50">
                         <div class="fact-top-wrap">
                             <div class="icon">
-                                <img src="img/icon/fact_icon02.png" alt="">
+                                <img src="img/icon/carehome1.jpg" alt="">
                             </div>
-                            <h2><span class="odometer" data-count="100">00</span></h2>
+                            <h2><span class="odometer" data-count="355">00</span></h2>
                         </div>
                         <div class="fact-content">
-                            <h4>get award this year</h4>
-                            <p>Lorem ipsum dolor sit amet, con etur adipisicing elit, sed do.</p>
+                            <h4> The number of elderly in all care homes</h4>
                         </div>
                     </div>
                 </div>
@@ -199,11 +200,11 @@
                             <div class="icon">
                                 <img src="img/icon/fact_icon03.png" alt="">
                             </div>
-                            <h2><span class="odometer" data-count="2999">00</span></h2>
+                            <h2><span class="odometer" data-count="71">00</span></h2>
                         </div>
                         <div class="fact-content">
-                            <h4>happy family users</h4>
-                            <p>Lorem ipsum dolor sit amet, con etur adipisicing elit, sed do.</p>
+                            <h4>The number of workers in all care homes</h4>
+                            
                         </div>
                     </div>
                 </div>
@@ -213,11 +214,11 @@
                             <div class="icon">
                                 <img src="img/icon/fact_icon04.png" alt="">
                             </div>
-                            <h2><span class="odometer" data-count="3921">00</span></h2>
+                            <h2><span class="odometer" data-count="20">00</span></h2>
                         </div>
                         <div class="fact-content">
-                            <h4>cup of coffee & tea</h4>
-                            <p>Lorem ipsum dolor sit amet, con etur adipisicing elit, sed do.</p>
+                            <h4>The number Of current users on the web site</h4>
+                         
                         </div>
                     </div>
                 </div>
@@ -290,10 +291,11 @@
                                 <div class="testi-quote-icon">
                                     <i class="flaticon-quotation"></i>
                                 </div>
-                                <h2>Lorem ipsum dolor sit amet, co nsectetur adipisicing elit, sed do eiusmod tempor incididunt.</h2>
+                                <h2>Our meeting and talking to them is a happiness for us before it is for them</h2>
+
                                 <div class="testi-avatar-info">
-                                    <span>founder</span>
-                                    <h4>daddy D. yankee</h4>
+                                   
+                                    <h4>Sara Asaad</h4>
                                 </div>
                             </div>
                         </div>
@@ -305,10 +307,10 @@
                                 <div class="testi-quote-icon">
                                     <i class="flaticon-quotation"></i>
                                 </div>
-                                <h2>Lorem ipsum dolor sit amet, co nsectetur adipisicing elit, sed do eiusmod tempor incididunt.</h2>
+                                <h2>They are the basis of long experience and knowledge in this life ... They are the fruit of the world</h2>
                                 <div class="testi-avatar-info">
-                                    <span>founder</span>
-                                    <h4>rosalina d. william</h4>
+                                   
+                                    <h4>Zaid Alnajar</h4>
                                 </div>
                             </div>
                         </div>
@@ -320,10 +322,10 @@
                                 <div class="testi-quote-icon">
                                     <i class="flaticon-quotation"></i>
                                 </div>
-                                <h2>Lorem ipsum dolor sit amet, co nsectetur adipisicing elit, sed do eiusmod tempor incididunt.</h2>
+                                <h2>Life without them is meaningless, they are the flower of existence</h2>
                                 <div class="testi-avatar-info">
-                                    <span>founder</span>
-                                    <h4>yalgaar h. halim</h4>
+                                   
+                                    <h4>Razan Aboushi</h4>
                                 </div>
                             </div>
                         </div>
@@ -335,10 +337,9 @@
                                 <div class="testi-quote-icon">
                                     <i class="flaticon-quotation"></i>
                                 </div>
-                                <h2>Lorem ipsum dolor sit amet, co nsectetur adipisicing elit, sed do eiusmod tempor incididunt.</h2>
+                                <h2>In their presence there is blessing and happiness, and in their separation there is sadness</h2>
                                 <div class="testi-avatar-info">
-                                    <span>founder</span>
-                                    <h4>daddy D. yankee</h4>
+                                    <h4>Razan Aboushi </h4>
                                 </div>
                             </div>
                         </div>
@@ -351,8 +352,8 @@
                                 <img src="{{ asset('img/images/testi_avatar01.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
-                                <span>founder</span>
-                                <h4>daddy D. yankee</h4>
+                               
+                                <h4>Sara Asaad</h4>
                             </div>
                         </div>
                         <div class="testi-avatar-box">
@@ -360,8 +361,8 @@
                                 <img src="{{ asset('img/images/testi_avatar02.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
-                                <span>founder</span>
-                                <h4>rosalina d. william</h4>
+                                
+                                <h4>Zaid Alnajar</h4>
                             </div>
                         </div>
                         <div class="testi-avatar-box">
@@ -369,8 +370,8 @@
                                 <img src="{{ asset('img/images/testi_avatar03.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
-                                <span>founder</span>
-                                <h4>yalgaar h. halim</h4>
+                                
+                                <h4>Razan Aboushi</h4>
                             </div>
                         </div>
                         <div class="testi-avatar-box">
@@ -378,8 +379,8 @@
                                 <img src="{{ asset('img/images/testi_avatar03.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
-                                <span>founder</span>
-                                <h4>yalgaar h. halim</h4>
+                                
+                                <h4>Razan Aboushi</h4>
                             </div>
                         </div>
                     </div>
@@ -395,8 +396,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-title text-center mb-70">
-                        <h6 class="sub-title">blog</h6>
-                        <h2 class="title">news feeds</h2>
+                        <h2 class="title">Articles feeds</h2>
                     </div>
                 </div>
             </div>
@@ -408,21 +408,16 @@
                         <div class="blog-post-thumb">
                             <a href="blog-details.html">
                                 <img src="{{ asset('img/blog/blog_thumb01.jpg') }}" alt="">
-                                <div class="overlay-post-date">23 <span>jan</span></div>
+                                <div class="overlay-post-date">30 <span>April</span></div>
                             </a>
                         </div>
                         <div class="blog-post-content">
                             <div class="blog-post-tag">
                                 <a href="#">senior,</a>
-                                <a href="#">care,</a>
-                                <a href="#">health</a>
+                                <a href="#">care</a>
                             </div>
-                            <h2><a href="blog-details.html">Lorem ipsum dolor sit am et, consectetur</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                            <div class="blog-post-avatar">
-                                <div class="thumb"><img src="{{ asset('img/blog/blog_post_avatar.jpg') }}" alt=""></div>
-                                <div class="info"><h6>Posted By <a href="#">Will smith</a></h6></div>
-                            </div>
+                            <h2><a href="blog-details.html">Elderly abuse</a></h2>
+                            <p>Elderly people are subjected to abuse by many individuals in society, and here we have clarified some of its forms</p>
                         </div>
                     </div>
                 </div>
@@ -431,21 +426,16 @@
                         <div class="blog-post-thumb">
                             <a href="blog-details.html">
                                 <img src="{{ asset('img/blog/blog_thumb02.jpg') }}" alt="">
-                                <div class="overlay-post-date">20 <span>jan</span></div>
+                                <div class="overlay-post-date">29 <span>April</span></div>
                             </a>
                         </div>
                         <div class="blog-post-content">
                             <div class="blog-post-tag">
                                 <a href="#">senior,</a>
-                                <a href="#">care,</a>
-                                <a href="#">health</a>
+                                <a href="#">care</a>
                             </div>
-                            <h2><a href="blog-details.html">Lorem ipsum dolor sit am et, consectetur</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                            <div class="blog-post-avatar">
-                                <div class="thumb"><img src="{{ asset('img/blog/blog_post_avatar.jpg') }}" alt=""></div>
-                                <div class="info"><h6>Posted By <a href="#">Will smith</a></h6></div>
-                            </div>
+                            <h2><a href="blog-details.html">Psychological characteristics of the elderly</a></h2>
+                            <p>What are the psychological characteristics that would affect the elderly ? </p>
                         </div>
                     </div>
                 </div>
@@ -454,21 +444,16 @@
                         <div class="blog-post-thumb">
                             <a href="blog-details.html">
                                 <img src="img/blog/blog_thumb03.jpg" alt="">
-                                <div class="overlay-post-date">18 <span>jan</span></div>
+                                <div class="overlay-post-date">27 <span>April</span></div>
                             </a>
                         </div>
                         <div class="blog-post-content">
                             <div class="blog-post-tag">
                                 <a href="#">senior,</a>
-                                <a href="#">care,</a>
-                                <a href="#">health</a>
-                            </div>
-                            <h2><a href="blog-details.html">Lorem ipsum dolor sit am et, consectetur</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                            <div class="blog-post-avatar">
-                                <div class="thumb"><img src="{{ asset('img/blog/blog_post_avatar.jpg') }}" alt=""></div>
-                                <div class="info"><h6>Posted By <a href="#">Will smith</a></h6></div>
-                            </div>
+                                <a href="#">care</a> 
+                             </div>
+                            <h2><a href="blog-details.html">The elderly and and ways to take care of them </a></h2>
+                            <p>Who are the elderly ? And what are the ways we can take care of them ? </p>
                         </div>
                     </div>
                 </div>

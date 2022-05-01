@@ -11,9 +11,10 @@
                                     <li><a href="{{ route('about-us') }}">About</a></li>
                                     <li><a href="{{ route('contact-us') }}">Contacts</a></li>
                                     <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
-                                    <li><a href="{{ route('news') }}">News</a></li>
+                                    <li><a href="{{ route('news') }}">Articles</a></li>
                                 </ul>
                             </div>
+
                             @if (Route::has('login'))
                                 <div class="header-top-action d-none d-md-block">
                                     <ul>
@@ -57,7 +58,7 @@
                                         </div>
                                         <div class="h-contact-content">
                                             <h5>email address</h5>
-                                            <span>info@youbelong.com</span>
+                                            <span>YouBelong@gmail.com</span>
                                         </div>
                                     </div>
                                 </li>

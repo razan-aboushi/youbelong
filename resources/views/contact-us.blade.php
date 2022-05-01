@@ -54,10 +54,13 @@
                                     <div class="form-grp">
                                         <select class="custom-select">
                                             <option selected="">Select Subject</option>
-                                            <option>medical care</option>
-                                            <option>resident care</option>
-                                            <option>independent</option>
-                                            <option>memory care</option>
+                                            <option>Care homes</option>
+                                            <option>Events</option>
+                                            <option>Donation</option>
+                                            <option>Messages for care homes</option>
+                                            <option>How the website works</option>
+                                            <option>Other things</option>
+
                                         </select>
                                         <i class="fal fa-arrow-down"></i>
                                     </div>
@@ -84,74 +87,22 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-9">
                     <div class="contact-info-box mb-30">
-                        <div class="contact-info-box-head">
-                            <h3>Tokyo Branch Office</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetur adi</span>
+                        <div class="contact-info-box-head text-center">
+                            <h3>More information about us for contact</h3>
                         </div>
                         <div class="contact-info-box-content">
                             <ul>
                                 <li>
                                     <i class="fal fa-phone"></i>
-                                    <span>987-098-876-98</span>
+                                    <span> +962 780577727  </span>
                                 </li>
                                 <li>
                                     <i class="fal fa-envelope"></i>
-                                    <span>info@webmail.com</span>
+                                    <span>YOUBELONG@GMAIL.COM </span>
                                 </li>
                                 <li>
                                     <i class="fal fa-map-marker-alt"></i>
-                                    <span>14/A, Monster Tower City Hall
-                                    New York, US</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="contact-info-box mb-30">
-                        <div class="contact-info-box-head">
-                            <h3>Tokyo Branch Office</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetur adi</span>
-                        </div>
-                        <div class="contact-info-box-content">
-                            <ul>
-                                <li>
-                                    <i class="fal fa-phone"></i>
-                                    <span>987-098-876-98</span>
-                                </li>
-                                <li>
-                                    <i class="fal fa-envelope"></i>
-                                    <span>info@webmail.com</span>
-                                </li>
-                                <li>
-                                    <i class="fal fa-map-marker-alt"></i>
-                                    <span>14/A, Monster Tower City Hall
-                                    New York, US</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="contact-info-box mb-30">
-                        <div class="contact-info-box-head">
-                            <h3>Tokyo Branch Office</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetur adi</span>
-                        </div>
-                        <div class="contact-info-box-content">
-                            <ul>
-                                <li>
-                                    <i class="fal fa-phone"></i>
-                                    <span>987-098-876-98</span>
-                                </li>
-                                <li>
-                                    <i class="fal fa-envelope"></i>
-                                    <span>info@webmail.com</span>
-                                </li>
-                                <li>
-                                    <i class="fal fa-map-marker-alt"></i>
-                                    <span>14/A, Monster Tower City Hall
-                                    New York, US</span>
+                                    <span>Jordan- Amman </span>
                                 </li>
                             </ul>
                         </div>

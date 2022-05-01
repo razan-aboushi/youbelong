@@ -31,8 +31,7 @@
                                 <li><a href="{{ route('about-us') }}">About</a></li>
                                 <li><a href="{{ route('contact-us') }}">Contacts</a></li>
                                 <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
-                                <li><a href="{{ route('news') }}">News</a></li>
-                                <li><a href="{{ route('terms-and-conditions') }}">terms & codtions</a></li>
+                                <li><a href="{{ route('news') }}">Articls</a></li>
                                 <li><a href="{{ route('privacy-policy') }}">privacy policy</a></li>
                             </ul>
                         </div>
