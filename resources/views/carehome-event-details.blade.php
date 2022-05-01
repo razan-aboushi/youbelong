@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.site')
 @section('content')
 
     <main>
@@ -13,7 +13,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Care Home Details</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Care Home Event Details</li>
                                 </ol>
                             </nav>
                         </div>
@@ -58,7 +58,7 @@
 
                                     <div class="mb-3">
                                         <h6>Phone:</h6>
-                                        <p class="small">962-6-12345678/p>
+                                        <p class="small">962-6-12345678</p>
                                     </div>
 
                                     <div class="mb-3">

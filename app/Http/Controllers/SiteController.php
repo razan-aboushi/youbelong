@@ -53,7 +53,7 @@ class SiteController extends Controller
 
     public function careHomes($id = null)
     {
-        if ($id) {
+        if (!empty($id)) {
             return view('carehome-details');
         }
 
@@ -62,7 +62,7 @@ class SiteController extends Controller
 
     public function careHomeEvents($id = null)
     {
-        if ($id) {
+        if (!empty($id)) {
             return view('carehome-event-details');
         }
 

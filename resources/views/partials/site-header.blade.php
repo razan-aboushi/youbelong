@@ -20,7 +20,7 @@
                                 <div class="header-top-action d-none d-md-block">
                                     <ul>
                                         @auth
-                                            <li class="header-login"><a href="#">Profile</a></li>
+                                            <li class="header-login"><a href="{{ route('dashboard') }}">Profile</a></li>
                                             <li class="header-login">
                                                 <a href="#" onclick="$('#logout').submit();">Logout</a>
                                                 <form id="logout" method="POST" action="{{ route('logout') }}">

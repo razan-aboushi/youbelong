@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.site')
 @section('content')
 
     <main>
@@ -58,7 +58,7 @@
 
                                         <div class="mb-3">
                                             <h6>Phone:</h6>
-                                            <p class="small">962-6-12345678/p>
+                                            <p class="small">962-6-12345678</p>
                                         </div>
 
                                         <div class="mb-3">
