@@ -8,8 +8,8 @@
                             <h4 class="title">You Belong</h4>
                         </div>
                         <div class="footer-text mb-35">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            <p>This site is designed to link care homes with community "individuals and organizations" who wish to provide assistance and donate to them,
+                                 and to facilitate the process of knowing care homes and their various needs</p>
                         </div>
                         <div class="footer-social">
                             <ul>

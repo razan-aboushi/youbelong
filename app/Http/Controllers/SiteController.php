@@ -9,17 +9,17 @@ class SiteController extends Controller
 {
     public function home()
     {
-        return view('home');
+        return view('site.home');
     }
 
     public function aboutUs()
     {
-        return view('about-us');
+        return view('site.about-us');
     }
 
     public function contactUs()
     {
-        return view('contact-us');
+        return view('site.contact-us');
     }
 
     public function storeContactUs(Request $request)
@@ -39,33 +39,33 @@ class SiteController extends Controller
 
     public function privacyPolicy()
     {
-        return view('privacy-policy');
+        return view('site.privacy-policy');
     }
 
     public function articles($id = null)
     {
         if ($id) {
-            return view('article-details');
+            return view('site.article-details');
         }
 
-        return view('articles');
+        return view('site.articles');
     }
 
     public function careHomes($id = null)
     {
         if (!empty($id)) {
-            return view('carehome-details');
+            return view('site.carehome-details');
         }
 
-        return view('carehomes');
+        return view('site.carehomes');
     }
 
     public function careHomeEvents($id = null)
     {
         if (!empty($id)) {
-            return view('carehome-event-details');
+            return view('site.carehome-event-details');
         }
 
-        return view('carehome-events');
+        return view('site.carehome-events');
     }
 }
