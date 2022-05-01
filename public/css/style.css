@@ -93,6 +93,15 @@ textarea:focus {
     text-transform: uppercase;
 }
 
+.invalid {
+    color: red;
+    padding-top: 5px;
+}
+
+.is-invalid {
+    border-color: red !important;
+}
+
 .capitalize {
     text-transform: capitalize;
 }
@@ -3490,6 +3499,12 @@ label.col-md-4.col-form-label {
 .portfolio-sidebar .widget {
     background: #29b0a2;
     padding: 45px 50px;
+    color: #fff;
+}
+
+.portfolio-sidebar h6,
+.portfolio-sidebar p {
+    color: #ebebeb;
 }
 
 .portfolio-widget-title h4 {
@@ -4820,7 +4835,6 @@ label.col-md-4.col-form-label {
 .contact-form-wrap {
     padding: 80px;
     background: #f7f7f7;
-    text-align: center;
     margin-bottom: -70px;
 }
 
@@ -4831,9 +4845,9 @@ label.col-md-4.col-form-label {
 .contact-form-wrap .form-grp input,
 .contact-form-wrap .form-grp textarea {
     width: 100%;
-    border: none;
+    border: 1px solid #fff;
     background: #fff;
-    padding: 23px 65px 23px 40px;
+    padding: 23px;
     color: #a5a5a5;
     font-size: 16px;
     font-weight: 500;
@@ -4854,13 +4868,13 @@ label.col-md-4.col-form-label {
 }
 
 .contact-form-wrap .form-grp .custom-select {
-    border: none;
+    border: 1px solid #fff;
     background: #fff;
     color: #a5a5a5;
     font-family: 'Roboto', sans-serif;
     text-transform: capitalize;
     font-weight: 500;
-    padding: 23px 65px 23px 40px;
+    padding: 23px;
     font-size: 16px;
     height: 70px;
 }

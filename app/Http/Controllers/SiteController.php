@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use Illuminate\Http\Request;
+
 class SiteController extends Controller
 {
     public function home()
@@ -19,9 +22,19 @@ class SiteController extends Controller
         return view('contact-us');
     }
 
-    public function termsAndConditions()
+    public function storeContactUs(Request $request)
     {
-        return view('terms-and-conditions');
+        $validated = $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|max:255',
+            'subject' => 'required|max:255',
+            'message' => 'required|max:5000',
+        ]);
+
+        Contact::create($validated);
+
+        return back()->with('success', 'Thank you!');
     }
 
     public function privacyPolicy()
@@ -29,13 +42,30 @@ class SiteController extends Controller
         return view('privacy-policy');
     }
 
-    public function news()
+    public function articles($id = null)
     {
-        return view('news');
+        if ($id) {
+            return view('article-details');
+        }
+
+        return view('articles');
     }
 
-    public function careHomes()
+    public function careHomes($id = null)
     {
-        return view('care-homes');
+        if ($id) {
+            return view('carehome-details');
+        }
+
+        return view('carehomes');
+    }
+
+    public function careHomeEvents($id = null)
+    {
+        if ($id) {
+            return view('carehome-event-details');
+        }
+
+        return view('carehome-events');
     }
 }

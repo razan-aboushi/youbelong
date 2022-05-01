@@ -20,6 +20,7 @@ class CareHome extends Model
         'elderlies_number',
         'establishment_date',
         'user_id',
+        'bio'
     ];
 
     public function user()

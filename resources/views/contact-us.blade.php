@@ -23,52 +23,75 @@
         </div>
     </section>
     <!-- breadcrumb-area-end -->
-
+    
     <!-- contact-area -->
     <div class="contact-area pt-120">
         <div class="container">
             <div class="row">
+            
                 <div class="col-12">
                     <div class="contact-form-wrap">
-                        <form action="#">
+                        <form action="{{ route('store-contact-us') }}" method="post">
+                            @csrf
+
+                            @if (\Session::has('success'))
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-success">
+                                            {!! \Session::get('success') !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input type="text" name="name" placeholder="Enter full name">
-                                        <i class="fal fa-user"></i>
+                                        <input type="text" name="name" placeholder="Enter full name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}">
+                                        @error('name')
+                                            <div class="small invalid">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input type="email" name="email" placeholder="Enter your email">
-                                        <i class="fal fa-envelope"></i>
+                                        <input type="email" name="email" placeholder="Enter your email" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                        @error('email')
+                                            <div class="small invalid">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input type="text" name="phone" placeholder="Phone Number">
-                                        <i class="fal fa-phone"></i>
+                                        <input type="text" name="phone" placeholder="Phone Number" class="@error('phone') is-invalid @enderror" value="{{ old('phone') }}">
+                                        @error('phone')
+                                            <div class="small invalid">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <select class="custom-select">
-                                            <option selected="">Select Subject</option>
-                                            <option>Care homes</option>
-                                            <option>Events</option>
-                                            <option>Donation</option>
-                                            <option>Messages for care homes</option>
-                                            <option>How the website works</option>
-                                            <option>Other things</option>
-
+                                        <select class="custom-select @error('subject') is-invalid @enderror" name="subject">
+                                            <option value="" selected="">Select Subject</option>
+                                            <option @if (old('subject') == 'Care homes') selected @endif)>Care homes</option>
+                                            <option @if (old('subject') == 'Events') selected @endif)>Events</option>
+                                            <option @if (old('subject') == 'Donation') selected @endif)>Donation</option>
+                                            <option @if (old('subject') == 'Messages for care homes') selected @endif)>Messages for care homes</option>
+                                            <option @if (old('subject') == 'How the website works') selected @endif)>How the website works</option>
+                                            <option @if (old('subject') == 'Other things') selected @endif)>Other things</option>
                                         </select>
-                                        <i class="fal fa-arrow-down"></i>
+                                        @error('subject')
+                                            <div class="small invalid">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="form-grp">
-                                <textarea name="message" id="message" placeholder="Enter messages"></textarea>
-                                <i class="fal fa-pencil"></i>
+                                <textarea name="message" id="message" placeholder="Enter messages" class="@error('message') is-invalid @enderror">{{ old('message') }}</textarea>
+                                @error('message')
+                                    <div class="small invalid">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button class="btn">submit your quote</button>
                         </form>
