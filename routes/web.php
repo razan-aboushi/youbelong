@@ -29,9 +29,11 @@ Route::get('/announcements/{id?}', [App\Http\Controllers\SiteController::class, 
 Route::get('/privacy-policy', [App\Http\Controllers\SiteController::class, 'privacyPolicy'])->name('privacy-policy');
 
 # user routes
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->prefix('/portal/')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'index'])->name('dashboard');
-    Route::get('/contact-requests', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
-    Route::get('/users', [App\Http\Controllers\UserController::class, 'users'])->name('users');
-});
 
+    Route::middleware('admin')->group(function () {
+        Route::get('/contact-requests', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
+        Route::get('/users', [App\Http\Controllers\UserController::class, 'users'])->name('users');
+    });
+});

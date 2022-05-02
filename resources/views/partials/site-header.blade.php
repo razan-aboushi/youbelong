@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="h-contact-content">
                                             <h5>email address</h5>
-                                            <span>YouBelong@gmail.com</span>
+                                            <span>info@youbelong.com</span>
                                         </div>
                                     </div>
                                 </li>

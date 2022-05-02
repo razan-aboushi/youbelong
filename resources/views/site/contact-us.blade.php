@@ -121,7 +121,7 @@
                                 </li>
                                 <li>
                                     <i class="fal fa-envelope"></i>
-                                    <span>YOUBELONG@GMAIL.COM </span>
+                                    <span>info@youbelong.com </span>
                                 </li>
                                 <li>
                                     <i class="fal fa-map-marker-alt"></i>
