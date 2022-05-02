@@ -9,7 +9,6 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -44,7 +43,7 @@ class RegisterController extends Controller
     }
 
     protected function validator(array $data)
-    {   
+    {
         # for security reasons, ignore admin
         $available_roles = Role::where('name', '!=', 'admin')->pluck('name')->toArray();
         $rules = [
@@ -86,7 +85,7 @@ class RegisterController extends Controller
         $userObj = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
             'phone' => $data['phone'],
             'birthdate' => $data['birthdate'] ?? null,
             'gender' => $data['gender'] ?? null,
@@ -94,6 +93,7 @@ class RegisterController extends Controller
             'role_id' => Role::where('name', $data['role'])->first()->id,
             # only for company
             'sector' => $data['sector'] ?? null,
+            'approved' => $data['role'] != 'carehome',
         ]);
 
         # for homecares

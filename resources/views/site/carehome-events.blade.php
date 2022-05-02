@@ -30,10 +30,10 @@
                     <div class="col-lg-12">
                         <div class="blog--post--item mb-40">
                             <div class="blog--post--thumb">
-                                <a href="{{ route('care-home-events', 1) }}"><img class="w-100" src="img/blog/Event1.jpg" alt="img"></a>
+                                <a href="{{ route('events', 1) }}"><img class="w-100" src="img/blog/Event1.jpg" alt="img"></a>
                             </div>
                             <div class="blog--post--content">
-                                <h4><a href="{{ route('care-home-events', 1) }}">Group dining with the elderly</a></h4>
+                                <h4><a href="{{ route('events', 1) }}">Group dining with the elderly</a></h4>
                                 <ul>
                                     <li><span><i class="far fa-calendar-alt"></i>25th April 2022</span></li>
                                 </ul>
@@ -43,7 +43,7 @@
                                 <p>We are having a group lunch party to celebrate with the elderly and share moments of happiness with them</p>
                                 <div class="blog--post--bottom">
                                     <div class="blog--read--more">
-                                        <a href="{{ route('care-home-events', 1) }}"><i class="far fa-arrow-right"></i>Read More</a>
+                                        <a href="{{ route('events', 1) }}"><i class="far fa-arrow-right"></i>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -53,10 +53,10 @@
                     <div class="col-lg-12">
                         <div class="blog--post--item mb-40">
                             <div class="blog--post--thumb">
-                                <a href="{{ route('care-home-events', 2) }}"><img class="w-100" src="img/blog/Event2.jpg" alt="img"></a>
+                                <a href="{{ route('events', 2) }}"><img class="w-100" src="img/blog/Event2.jpg" alt="img"></a>
                             </div>
                             <div class="blog--post--content">
-                                <h4><a href="{{ route('care-home-events', 2) }}">Elderly Drawing Day</a></h4>
+                                <h4><a href="{{ route('events', 2) }}">Elderly Drawing Day</a></h4>
                                 <ul>
                                     <li><span><i class="far fa-calendar-alt"></i>10th May 2022</span></li>
                                 </ul>
@@ -67,7 +67,7 @@
                                 <p>We are holding an event for the elderly to participate in drawing and playing with colors to live a new happiness</p>
                                 <div class="blog--post--bottom">
                                     <div class="blog--read--more">
-                                        <a href="{{ route('care-home-events', 2) }}"><i class="far fa-arrow-right"></i>Read More</a>
+                                        <a href="{{ route('events', 2) }}"><i class="far fa-arrow-right"></i>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,10 +76,10 @@
                     <div class="col-lg-12">
                         <div class="blog--post--item mb-40">
                             <div class="blog--post--thumb">
-                                <a href="{{ route('care-home-events', 3) }}"><img class="w-100" src="img/blog/Event3.jpg" alt="img"></a>
+                                <a href="{{ route('events', 3) }}"><img class="w-100" src="img/blog/Event3.jpg" alt="img"></a>
                             </div>
                             <div class="blog--post--content">
-                                <h4><a href="{{ route('care-home-events', 3) }}">Elderly entertainment day</a></h4>
+                                <h4><a href="{{ route('events', 3) }}">Elderly entertainment day</a></h4>
                                 <ul>
                                     <li><span><i class="far fa-calendar-alt"></i>12th May 2022</span></li>
                                 </ul>
@@ -89,7 +89,7 @@
                                 <p>We are holding an event to entertain the elderly and share the play to bring them back to their youth</p>
                                 <div class="blog--post--bottom">
                                     <div class="blog--read--more">
-                                        <a href="{{ route('care-home-events', 3) }}"><i class="far fa-arrow-right"></i>Read More</a>
+                                        <a href="{{ route('events', 3) }}"><i class="far fa-arrow-right"></i>Read More</a>
                                     </div>
                                 </div>
                             </div>

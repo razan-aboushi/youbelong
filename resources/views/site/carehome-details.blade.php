@@ -51,7 +51,7 @@
 
                                     <div class="mb-3">
                                         <h6>Phone:</h6>
-                                        <p class="small">4129624 / 96264126924 </p>
+                                        <p class="small">4129624 / 962-64126924 </p>
                                     </div>
 
                                     <div class="mb-3">

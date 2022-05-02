@@ -125,7 +125,7 @@
                                 </li>
                                 <li>
                                     <i class="fal fa-map-marker-alt"></i>
-                                    <span>Jordan- Amman </span>
+                                    <span>Amman - Jordan</span>
                                 </li>
                             </ul>
                         </div>

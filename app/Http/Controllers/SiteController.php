@@ -60,6 +60,15 @@ class SiteController extends Controller
         return view('site.carehomes');
     }
 
+    public function announcements($id = null)
+    {
+        if (!empty($id)) {
+            return view('site.announcement-details');
+        }
+
+        return view('site.announcements');
+    }
+
     public function careHomeEvents($id = null)
     {
         if (!empty($id)) {

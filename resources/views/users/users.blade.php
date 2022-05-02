@@ -3,7 +3,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Contact Us</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Users</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -11,42 +11,45 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Subject</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Message</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Reg. Date</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Subject</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Message</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Reg. Date</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        @forelse ($contacts as $contact)
+                        @forelse ($users as $user)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $contact->subject }}</td>
-                                <td>{{ $contact->name }}</td>
-                                <td>{{ $contact->email }}</td>
-                                <td>{{ $contact->phone }}</td>
-                                <td>{{ $contact->message ?? 'N/A' }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->phone }}</td>
+                                <td>{{ $user->role->name }}</td>
+                                <td>{{ $user->approved ? 'approved' : 'pending' }}</td>
+                                <td>{{ $user->created_at ?? 'N/A' }}</td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="6">No data available!</td>
+                                <td colspan="7">No data available!</td>
                             </tr>
                         @endforelse
                     </tbody>
                 </table>
             </div>
-            {{ $contacts->render() }}
+            {{ $users->render() }}
         </div>
     </div>
 

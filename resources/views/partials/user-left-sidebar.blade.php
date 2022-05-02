@@ -13,7 +13,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('dashboard') }}">
+        <a class="nav-link" href="{{ route('users') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>Users</span>
         </a>

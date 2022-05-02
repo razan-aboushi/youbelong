@@ -10,8 +10,13 @@
                                     <li><a href="{{ route('home') }}">Home</a></li>
                                     <li><a href="{{ route('about-us') }}">About</a></li>
                                     <li><a href="{{ route('contact-us') }}">Contacts</a></li>
-                                    <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
-                                    <li><a href="{{ route('care-home-events') }}">Care Home Events</a></li>
+                                    <li class="dropdown"><a href="#">Care Home</a>
+                                        <ul class="submenu">
+                                            <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
+                                            <li><a href="{{ route('events') }}">Events</a></li>
+                                            <li><a href="{{ route('announcements') }}">Announcements</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="{{ route('articles') }}">Articles</a></li>
                                 </ul>
                             </div>
