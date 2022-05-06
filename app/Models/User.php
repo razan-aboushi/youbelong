@@ -21,6 +21,7 @@ class User extends Authenticatable
         'address',
         'gender',
         'role_id',
+        'sector',
         'approved',
     ];
 
@@ -38,7 +39,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function cCareHome()
+    public function careHome()
     {
         return $this->hasOne(CareHome::class);
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -53,11 +54,18 @@ class SiteController extends Controller
 
     public function careHomes($id = null)
     {
+        $careHomes = User::whereHas('role', function ($r) {
+            $r->where('name', 'carehome');
+        })->where('approved', '1')->with('careHome');
+
         if (!empty($id)) {
-            return view('site.carehome-details');
+            $careHome = $careHomes->findOrFail($id);
+            return view('site.carehome-details', compact('careHome'));
         }
 
-        return view('site.carehomes');
+        $careHomes = $careHomes->get();
+
+        return view('site.carehomes', compact('careHomes'));
     }
 
     public function announcements($id = null)

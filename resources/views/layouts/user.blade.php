@@ -8,7 +8,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset("css/fontawesome-all.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("plugins/summernote/summernote-bs4.css") }}">
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}" >
+
     </head>
     <body>
         <main id="wrapper">
@@ -22,12 +24,12 @@
                 </div>
             </div>
         </main>
+        <script src="{{ asset("js/jquery-slim.js") }}"></script>
+        <script src="{{ asset("js/popper.js") }}"></script>
         <script src="{{ asset("js/jquery.js") }}"></script>
         <script src="{{ asset("js/bootstrap.min.js") }}"></script>
         <script src="{{ asset("js/admin.js") }}"></script>
+        <script src="{{ asset("plugins/summernote/summernote-bs4.js") }}"></script>
         <script src="{{ asset("js/jquery.easing.js") }}"></script>
-        <script src="{{ asset("js/chart.js") }}"></script>
-        <script src="{{ asset("js/chart-area.js") }}"></script>
-        <script src="{{ asset("js/chart-pie.js") }}"></script>
     </body>
 </html>

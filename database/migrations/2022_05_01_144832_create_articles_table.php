@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('cover_image')->nullable();
-            $table->text('description');
+            $table->string('title');
+            $table->text('short_description');
             $table->mediumText('content');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();

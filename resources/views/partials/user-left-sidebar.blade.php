@@ -27,6 +27,14 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('user-articles') }}">
+            <i class="fa fa-book"></i>
+            <span>Articles</span>
+        </a>
+    </li>
+
+
+    <li class="nav-item">
         <a class="nav-link" href="#" onclick="$('#logout').submit();">
             <i class="fas fa-fw fa-sign-out"></i>
             <span>Logout</span>

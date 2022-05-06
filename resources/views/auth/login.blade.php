@@ -11,6 +11,14 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
+                            @if (\Session::has('message'))
+                                <div class="row mb-3">
+                                    <div class="offset-md-4 col-md-6">
+                                        <div class="alert alert-info small mb-0">{!! \Session::get('message') !!}</div>
+                                    </div>
+                                </div>
+                            @endif
+
                             <div class="row mb-3">
                                 <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 

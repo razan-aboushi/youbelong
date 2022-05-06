@@ -265,6 +265,15 @@ label.col-md-4.col-form-label {
     text-align: right;
 }
 
+.blog--post--thumb.bg-image {
+    height: 250px;
+    border: 1px solid #f6f6f6;
+    border-bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 .btn::before {
     content: "";
     position: absolute;

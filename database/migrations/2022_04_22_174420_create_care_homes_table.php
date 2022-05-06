@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('elderlies_number')->nullable();
             $table->date('establishment_date')->nullable();
             $table->mediumText('bio')->nullable();
+            $table->text('short_description')->nullable();
             $table->timestamps();
         });
     }

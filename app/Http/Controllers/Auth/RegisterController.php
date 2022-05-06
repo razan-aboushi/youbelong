@@ -8,7 +8,10 @@ use App\Models\Role;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -106,5 +109,25 @@ class RegisterController extends Controller
         }
 
         return $userObj;
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        $message = 'Please login to your account';
+        if ($user->role->name == 'carehome') {
+            $message = 'Your account is under revew by admin!';
+        }
+
+        return $request->wantsJson()
+        ? new JsonResponse([], 201)
+        : redirect()->route('login')->with('message', $message);
     }
 }

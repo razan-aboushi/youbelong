@@ -23,6 +23,7 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('profile')->nullable();
             $table->string('address')->nullable();
+            $table->enum('sector', ['public', 'private'])->nullable();
             $table->foreignId('role_id')->constrained('roles')->cascadeOnDelete()->cascadeOnUpdate();
             $table->tinyInteger('approved')->default(0);
             $table->rememberToken();

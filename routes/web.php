@@ -31,9 +31,17 @@ Route::get('/privacy-policy', [App\Http\Controllers\SiteController::class, 'priv
 # user routes
 Route::middleware(['auth'])->prefix('/portal/')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'index'])->name('dashboard');
+    Route::get('/profile-information', [App\Http\Controllers\UserController::class, 'profileInformation'])->name('profile-information');
+    Route::put('/profile-information', [App\Http\Controllers\UserController::class, 'storeProfileInformation'])->name('update-profile-information');
 
     Route::middleware('admin')->group(function () {
-        Route::get('/contact-requests', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
-        Route::get('/users', [App\Http\Controllers\UserController::class, 'users'])->name('users');
+        Route::get('/contact-request-lists', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
+        Route::get('/user-lists', [App\Http\Controllers\UserController::class, 'users'])->name('users');
+        Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');
+
+        Route::get('/article-lists', [App\Http\Controllers\CMSController::class, 'articles'])->name('user-articles');
+        Route::post('/create-article', [App\Http\Controllers\CMSController::class, 'storeArticles'])->name('user-create-article');
+        Route::put('/create-article', [App\Http\Controllers\CMSController::class, 'updateArticles'])->name('user-update-article');
+        Route::delete('/delete-article', [App\Http\Controllers\CMSController::class, 'deleteArticles'])->name('user-delete-article');
     });
 });
