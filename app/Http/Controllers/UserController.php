@@ -22,23 +22,57 @@ class UserController extends Controller
     public function contactUs(Request $request)
     {
         if (auth()->user()->can('is-admin')) {
-            $contacts = new Contact;
+            $contacts = Contact::query();
         } else {
             $contacts = CareHomeContact::where('user_id', auth()->user()->id);
         }
 
+        if ($request->has('subject') && !is_null($request->subject)) {
+            $contacts->where('subject', $request->subject);
+        }
+
+        if ($request->has('name') && !is_null($request->name)) {
+            $contacts->where('name', 'like', '%' . $request->name . '%');
+        }
+
+        if ($request->has('phone') && !is_null($request->phone)) {
+            $contacts->where('phone', 'like', '%' . $request->phone . '%');
+        }
+
+        if ($request->has('email') && !is_null($request->email)) {
+            $contacts->where('email', 'like', '%' . $request->email . '%');
+        }
+
         $contacts = $contacts->latest()->simplePaginate();
 
-        return view('users.contact-us', compact('contacts'));
+        return view('users.contact-us', compact('contacts', 'request'));
     }
 
     public function users(Request $request)
     {
         $users = User::whereHas('role', function ($r) {
             $r->where('name', '!=', 'admin');
-        })->with(['role'])->latest()->simplePaginate();
+        });
 
-        return view('users.users', compact('users'));
+        if ($request->has('name') && !is_null($request->name)) {
+            $users->where('name', 'like', '%' . $request->name . '%');
+        }
+
+        if ($request->has('email') && !is_null($request->email)) {
+            $users->where('email', 'like', '%' . $request->email . '%');
+        }
+
+        if ($request->has('phone') && !is_null($request->phone)) {
+            $users->where('phone', 'like', '%' . $request->phone . '%');
+        }
+
+        if ($request->has('approved') && !is_null($request->approved)) {
+            $users->where('approved', $request->approved);
+        }
+
+        $users = $users->with(['role'])->latest()->simplePaginate();
+
+        return view('users.users', compact('users', 'request'));
     }
 
     public function profileInformation()

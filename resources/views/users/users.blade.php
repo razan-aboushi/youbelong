@@ -5,7 +5,43 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Users</h6>
         </div>
+
         <div class="card-body">
+            <div class="card-filter mb-3">
+                <form action="{{ route('users') }}">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <h6 class="m-0 text-primary">Filter results</h3>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <input type="text" class="form-control" name="name" value="{{ $request->name }}" placeholder="Name Filter"/>
+                        </div>
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <input type="email" class="form-control" name="email" value="{{ $request->email }}" placeholder="Email Filter"/>
+                        </div>
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <input type="text" class="form-control" name="phone" value="{{ $request->phone }}" placeholder="Phone Filter"/>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="approved" class="form-control">
+                                <option value="">Status</option>
+                                <option value="1" @if ($request->approved == '1') selected @endif>Active</option>
+                                <option value="0" @if ($request->approved == '0') selected @endif>Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="submit" value="Filter" class="btn btn-success"/>
+                            <a href="{{ route('users') }}" class="btn btn-danger">Reset</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
             @if (\Session::has('message'))
                 <div class="row">
                     <div class="col-12">

@@ -12,11 +12,21 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::latest()->simplePaginate();
+        $articles = Article::query();
 
-        return view('users.articles.index', compact('articles'));
+        if ($request->has('title') && !is_null($request->title)) {
+            $articles->where('title', 'like', '%' . $request->title . '%');
+        }
+
+        if ($request->has('status') && !is_null($request->status)) {
+            $articles->where('status', $request->status);
+        }
+
+        $articles = $articles->latest()->simplePaginate();
+
+        return view('users.articles.index', compact('articles', 'request'));
     }
 
     /**
