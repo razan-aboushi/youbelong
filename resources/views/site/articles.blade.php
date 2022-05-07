@@ -53,6 +53,12 @@
                         </div>
                     @endforelse
                 </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-6">
+                        {{ $articles->render() }}
+                    </div>
+                </div>
             </div>
         </section>
     </main>

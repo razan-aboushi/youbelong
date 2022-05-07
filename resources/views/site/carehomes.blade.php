@@ -48,6 +48,12 @@
                         </div>
                     @endforelse
                 </div>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-6">
+                        {{ $careHomes->render() }}
+                    </div>
+                </div>
             </div>
         </section>
     </main>

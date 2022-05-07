@@ -1,9 +1,7 @@
 @extends('layouts.site')
 @section('content')
 
-<!-- main-area -->
 <main>
-    <!-- breadcrumb-area -->
     <section class="breadcrumb-area">
         <div class="breadcrumb-bg" data-background="{{ asset('img/bg/breadcrumb_bg.jpg') }}"></div>
         <div class="container">
@@ -22,13 +20,10 @@
             </div>
         </div>
     </section>
-    <!-- breadcrumb-area-end -->
-    
-    <!-- contact-area -->
+
     <div class="contact-area pt-120">
         <div class="container">
             <div class="row">
-            
                 <div class="col-12">
                     <div class="contact-form-wrap">
                         <form action="{{ route('store-contact-us') }}" method="post">
@@ -43,7 +38,6 @@
                                     </div>
                                 </div>
                             @endif
-
 
                             <div class="row">
                                 <div class="col-md-6">
@@ -62,6 +56,8 @@
                                         @enderror
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-grp">
                                         <input type="text" name="phone" placeholder="Phone Number" class="@error('phone') is-invalid @enderror" value="{{ old('phone') }}">
@@ -74,12 +70,12 @@
                                     <div class="form-grp">
                                         <select class="custom-select @error('subject') is-invalid @enderror" name="subject">
                                             <option value="" selected="">Select Subject</option>
-                                            <option @if (old('subject') == 'Care homes') selected @endif)>Care homes</option>
-                                            <option @if (old('subject') == 'Events') selected @endif)>Events</option>
-                                            <option @if (old('subject') == 'Donation') selected @endif)>Donation</option>
-                                            <option @if (old('subject') == 'Messages for care homes') selected @endif)>Messages for care homes</option>
-                                            <option @if (old('subject') == 'How the website works') selected @endif)>How the website works</option>
-                                            <option @if (old('subject') == 'Other things') selected @endif)>Other things</option>
+                                            <option @if (old('subject') == 'Care homes') selected @endif>Care homes</option>
+                                            <option @if (old('subject') == 'Events') selected @endif>Events</option>
+                                            <option @if (old('subject') == 'Donation') selected @endif>Donation</option>
+                                            <option @if (old('subject') == 'Messages for care homes') selected @endif>Messages for care homes</option>
+                                            <option @if (old('subject') == 'How the website works') selected @endif>How the website works</option>
+                                            <option @if (old('subject') == 'Other things') selected @endif>Other things</option>
                                         </select>
                                         @error('subject')
                                             <div class="small invalid">{{ $message }}</div>
@@ -100,11 +96,9 @@
             </div>
         </div>
     </div>
-    <!-- contact-area-end -->
 
     <div class="contact-map" data-background="{{ asset('img/bg/contact_map.jpg') }}"></div>
 
-    <!-- contact-area -->
     <div class="contact-info-area pb-90">
         <div class="container">
             <div class="row justify-content-center">
@@ -134,9 +128,6 @@
             </div>
         </div>
     </div>
-    <!-- contact-area-end -->
-
 </main>
-<!-- main-area-emd -->
 
 @endsection

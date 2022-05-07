@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -55,7 +56,7 @@ class SiteController extends Controller
             return view('site.article-details', compact('article'));
         }
 
-        $articles = $articles->get();
+        $articles = $articles->latest()->simplePaginate();
 
         return view('site.articles', compact('articles'));
     }
@@ -71,9 +72,26 @@ class SiteController extends Controller
             return view('site.carehome-details', compact('careHome'));
         }
 
-        $careHomes = $careHomes->get();
+        $careHomes = $careHomes->latest()->simplePaginate();
 
         return view('site.carehomes', compact('careHomes'));
+    }
+
+    public function storeCarehomeContactUs(Request $request, $id)
+    {
+        $validated = $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|max:255',
+            'subject' => 'required|max:255',
+            'message' => 'required|max:5000',
+        ]);
+
+        $validated['user_id'] = $id;
+
+        CareHomeContact::create($validated);
+
+        return back()->with('success', 'Thank you, we will contat you shortly!');
     }
 
     public function announcements($id = null)

@@ -23,4 +23,19 @@ class UserPolicy
     {
         return $user->role->name == 'admin';
     }
+
+    public function is_carehome(User $user)
+    {
+        return $user->role->name == 'carehome';
+    }
+
+    public function is_approved(User $user)
+    {
+        return $user->approved;
+    }
+
+    public function access_contacts_list(User $user)
+    {
+        return $this->is_admin($user) || $this->is_carehome($user);
+    }
 }

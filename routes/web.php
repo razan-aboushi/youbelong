@@ -23,6 +23,7 @@ Route::get('/about-us', [App\Http\Controllers\SiteController::class, 'aboutUs'])
 Route::get('/contact-us', [App\Http\Controllers\SiteController::class, 'contactUs'])->name('contact-us');
 Route::post('/contact-us', [App\Http\Controllers\SiteController::class, 'storeContactUs'])->name('store-contact-us');
 Route::get('/care-homes/{id?}', [App\Http\Controllers\SiteController::class, 'careHomes'])->name('care-homes');
+Route::post('/care-homes-contact/{id}', [App\Http\Controllers\SiteController::class, 'storeCarehomeContactUs'])->name('store-carehome-contact');
 Route::get('/events/{id?}', [App\Http\Controllers\SiteController::class, 'careHomeEvents'])->name('events');
 Route::get('/articles/{id?}', [App\Http\Controllers\SiteController::class, 'articles'])->name('articles');
 Route::get('/announcements/{id?}', [App\Http\Controllers\SiteController::class, 'announcements'])->name('announcements');
@@ -34,8 +35,11 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
     Route::get('/profile-information', [App\Http\Controllers\UserController::class, 'profileInformation'])->name('profile-information');
     Route::put('/profile-information', [App\Http\Controllers\UserController::class, 'storeProfileInformation'])->name('update-profile-information');
 
-    Route::middleware('admin')->group(function () {
+    Route::middleware('can:access-contacts-list')->group(function () {
         Route::get('/contact-request-lists', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
+    });
+
+    Route::middleware('admin')->group(function () {
         Route::get('/user-lists', [App\Http\Controllers\UserController::class, 'users'])->name('users');
         Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');
 

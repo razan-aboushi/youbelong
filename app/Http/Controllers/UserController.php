@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\User;
 use Carbon\Carbon;
@@ -9,23 +10,24 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        if (auth()->user()->can('is-admin')){
+        if (auth()->user()->can('is-admin')) {
             return view('users.admin-dashboard');
-        }else{
+        } else {
             return view('users.user-dashboard');
         }
     }
 
     public function contactUs(Request $request)
     {
-        $contacts = Contact::latest()->simplePaginate();
+        if (auth()->user()->can('is-admin')) {
+            $contacts = new Contact;
+        } else {
+            $contacts = CareHomeContact::where('user_id', auth()->user()->id);
+        }
+
+        $contacts = $contacts->latest()->simplePaginate();
 
         return view('users.contact-us', compact('contacts'));
     }
