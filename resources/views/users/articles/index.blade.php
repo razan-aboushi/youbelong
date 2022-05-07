@@ -3,7 +3,12 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Articles</h6>
+            <div class="float-left">
+                <h6 class="m-0 font-weight-bold text-primary mt-2">Articles</h6>
+            </div>
+            <div class="float-right">
+                <a class="btn btn-success btn-sm" href="{{ route('articles.create') }}">Create</a>
+            </div>
         </div>
         <div class="card-body">
             @if (\Session::has('message'))
@@ -38,22 +43,21 @@
                         @forelse ($articles as $article)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $article->name }}</td>
-                                <td>{{ $article->email }}</td>
-                                <td>{{ $article->phone ?? 'N/A' }}</td>
-                                <td>{{ $article->address ?? 'N/A' }}</td>
-                                <td>{{ $article->role->name }}</td>
-                                <td>{{ $article->approved ? 'Active' : 'Inactive'}}</td>
+                                <td>{{ $article->title }}</td>
+                                <td>{{ $article->status ? 'Published' : 'Draft'}}</td>
                                 <td>{{ $article->created_at ?? 'N/A' }}</td>
-                                <td>
-                                    <a class="btn {{ $article->approved ? 'btn-danger' : 'btn-success' }}" 
-                                        href="{{ route('profile-status', $article->id) }}">{{ $article->approved ? 'suspend' : 'activate' }}
-                                    </a>
+                                <td class="action-btns">
+                                    <a class="btn btn-info btn-sm" href="{{ route('articles.edit', $article->id) }}">Edit</a>
+                                    <form action="{{ route('articles.destroy', $article->id) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="9">No data available!</td>
+                                <td colspan="5">No data available!</td>
                             </tr>
                         @endforelse
                     </tbody>

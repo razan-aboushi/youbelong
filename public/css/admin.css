@@ -2255,6 +2255,10 @@ select.form-control:focus::-ms-value {
     line-height: 1.5;
 }
 
+.action-btns * {
+    display: inline-block;
+}
+
 @media (max-width: 767.98px) {
     .col-form-label {
         text-align: left;

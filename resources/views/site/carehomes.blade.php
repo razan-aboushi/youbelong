@@ -24,19 +24,19 @@
         <section class="blog-area pt-120 pb-120">
             <div class="container">
                 <div class="row justify-content-center">
-                    @forelse ($careHomes as $home)
+                    @forelse ($careHomes as $item)
                         <div class="col-lg-6">
                             <div class="blog--post--item mb-40">
-                                @php $profile = $home->profile ?  asset('storage/profiles/'.$home->profile) : asset('img/default.jpg');   @endphp
-                                <a href="{{ route('care-homes', $home->id) }}">
+                                @php $profile = $item->profile ?  asset('storage/profiles/'.$item->profile) : asset('img/default.jpg');   @endphp
+                                <a href="{{ route('care-homes', $item->id) }}">
                                     <div class="blog--post--thumb bg-image" style="background-image: url({{$profile}})"></div>
                                 </a>
                                 <div class="blog--post--content">
-                                    <h3><a href="{{ route('care-homes', $home->id) }}">{{ $home->name }}</a></h3>
-                                    <p>{{ $home->careHome?->short_description }}</p>
+                                    <h4><a href="{{ route('care-homes', $item->id) }}">{{ $item->name }}</a></h4>
+                                    <p>{{ $item->careHome?->short_description }}</p>
                                     <div class="blog--post--bottom">
                                         <div class="blog--read--more">
-                                            <a href="{{ route('care-homes', $home->id) }}"><i class="far fa-arrow-right"></i>Read More</a>
+                                            <a href="{{ route('care-homes', $item->id) }}"><i class="far fa-arrow-right"></i>Read More</a>
                                         </div>
                                     </div>
                                 </div>

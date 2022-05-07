@@ -18,4 +18,9 @@ class UserPolicy
     {
         //
     }
+
+    public function is_admin(User $user)
+    {
+        return $user->role->name == 'admin';
+    }
 }

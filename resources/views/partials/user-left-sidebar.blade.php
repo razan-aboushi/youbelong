@@ -12,27 +12,28 @@
         </a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('users') }}">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Users</span>
-        </a>
-    </li>
+    @can('is-admin')
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('users') }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Users</span>
+            </a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('user-contact-us') }}">
-            <i class="fas fa-fw fa-envelope"></i>
-            <span>Contact Us</span>
-        </a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('user-contact-us') }}">
+                <i class="fas fa-fw fa-envelope"></i>
+                <span>Contact Us</span>
+            </a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('user-articles') }}">
-            <i class="fa fa-book"></i>
-            <span>Articles</span>
-        </a>
-    </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('articles.index') }}">
+                <i class="fa fa-book"></i>
+                <span>Articles</span>
+            </a>
+        </li>
+    @endcan
 
     <li class="nav-item">
         <a class="nav-link" href="#" onclick="$('#logout').submit();">

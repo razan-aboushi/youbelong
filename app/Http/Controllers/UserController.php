@@ -16,7 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.dashboard');
+        if (auth()->user()->can('is-admin')){
+            return view('users.admin-dashboard');
+        }else{
+            return view('users.user-dashboard');
+        }
     }
 
     public function contactUs(Request $request)

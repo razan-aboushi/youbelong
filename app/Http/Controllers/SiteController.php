@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -10,7 +11,9 @@ class SiteController extends Controller
 {
     public function home()
     {
-        return view('site.home');
+        $latest_articles = Article::where('status', '1')->limit(5)->latest()->get();
+
+        return view('site.home', compact('latest_articles'));
     }
 
     public function aboutUs()
@@ -45,11 +48,16 @@ class SiteController extends Controller
 
     public function articles($id = null)
     {
+        $articles = Article::where('status', '1');
+
         if ($id) {
-            return view('site.article-details');
+            $article = $articles->findOrFail($id);
+            return view('site.article-details', compact('article'));
         }
 
-        return view('site.articles');
+        $articles = $articles->get();
+
+        return view('site.articles', compact('articles'));
     }
 
     public function careHomes($id = null)

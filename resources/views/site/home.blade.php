@@ -1,7 +1,6 @@
 @extends('layouts.site')
 @section('content')
 
-    <!-- slider-area -->
     <section class="slider-area slider-x-margin">
         <div class="slider-active">
             <div class="single-slider slider-bg d-flex align-items-center" data-background="img/slider/slider_bg01.jpg">
@@ -30,9 +29,7 @@
             </div>
         </div>
     </section>
-    <!-- slider-area-end -->
 
-    <!-- about-us-area -->
     <section class="about-us-area pt-120">
         <div class="container">
             <div class="row">
@@ -55,7 +52,6 @@
             </div>
         </div>
     </section>
-    <!-- about-us-area-end -->
 
     <!-- services-area -->
     <section class="services-area pt-120 pb-90">
@@ -390,76 +386,39 @@
     </section>
     <!-- testimonial-area-end -->
 
-    <!-- blog-area -->
-    <section class="blog-area pt-120 pb-70">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center mb-70">
-                        <h2 class="title">Articles feeds</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container custom-container">
-            <div class="row blog-active">
-                <div class="col-lg-6">
-                    <div class="blog-post-item bp-style-one mb-50">
-                        <div class="blog-post-thumb">
-                            <a href="blog-details.html">
-                                <img src="{{ asset('img/blog/blog_thumb01.jpg') }}" alt="">
-                                <div class="overlay-post-date">30 <span>April</span></div>
-                            </a>
-                        </div>
-                        <div class="blog-post-content">
-                            <div class="blog-post-tag">
-                                <a href="#">senior,</a>
-                                <a href="#">care</a>
-                            </div>
-                            <h2><a href="blog-details.html">Elderly abuse</a></h2>
-                            <p>Elderly people are subjected to abuse by many individuals in society, and here we have clarified some of its forms</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-post-item bp-style-one mb-50">
-                        <div class="blog-post-thumb">
-                            <a href="blog-details.html">
-                                <img src="{{ asset('img/blog/blog_thumb02.jpg') }}" alt="">
-                                <div class="overlay-post-date">29 <span>April</span></div>
-                            </a>
-                        </div>
-                        <div class="blog-post-content">
-                            <div class="blog-post-tag">
-                                <a href="#">senior,</a>
-                                <a href="#">care</a>
-                            </div>
-                            <h2><a href="blog-details.html">Psychological characteristics of the elderly</a></h2>
-                            <p>What are the psychological characteristics that would affect the elderly ? </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-post-item bp-style-one mb-50">
-                        <div class="blog-post-thumb">
-                            <a href="blog-details.html">
-                                <img src="img/blog/blog_thumb03.jpg" alt="">
-                                <div class="overlay-post-date">27 <span>April</span></div>
-                            </a>
-                        </div>
-                        <div class="blog-post-content">
-                            <div class="blog-post-tag">
-                                <a href="#">senior,</a>
-                                <a href="#">care</a> 
-                             </div>
-                            <h2><a href="blog-details.html">The elderly and and ways to take care of them </a></h2>
-                            <p>Who are the elderly ? And what are the ways we can take care of them ? </p>
+    @if (!$latest_articles->isEmpty())
+        <section class="blog-area pt-120 pb-70">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-title text-center mb-70">
+                            <h2 class="title">Articles feeds</h2>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- blog-area-end -->
+            <div class="container custom-container">
+                <div class="row blog-active">
+                    @foreach ($latest_articles as $item)
+                        <div class="col-lg-6">
+                            <div class="blog-post-item bp-style-one mb-50">
+                                <div class="blog-post-thumb">
+                                    @php $profile = $item->cover_image ?  asset('storage/uploads/'.$item->cover_image) : asset('img/default.jpg');   @endphp
+                                    <a href="{{ route('articles', $item->id) }}">
+                                        <img src="{{ $profile }}" alt="{{ $item->title }}">
+                                        <div class="overlay-post-date">{{  $item->created_at->format('d') }} <span>{{  $item->created_at->format('F') }}</span></div>
+                                    </a>
+                                </div>
+                                <div class="blog-post-content">
+                                    <h2><a href="{{ route('articles', $item->id) }}">{{ $item->title }}</a></h2>
+                                    <p>{{ $item->short_description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
     @endsection

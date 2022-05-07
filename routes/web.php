@@ -39,9 +39,6 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
         Route::get('/user-lists', [App\Http\Controllers\UserController::class, 'users'])->name('users');
         Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');
 
-        Route::get('/article-lists', [App\Http\Controllers\CMSController::class, 'articles'])->name('user-articles');
-        Route::post('/create-article', [App\Http\Controllers\CMSController::class, 'storeArticles'])->name('user-create-article');
-        Route::put('/create-article', [App\Http\Controllers\CMSController::class, 'updateArticles'])->name('user-update-article');
-        Route::delete('/delete-article', [App\Http\Controllers\CMSController::class, 'deleteArticles'])->name('user-delete-article');
+        Route::resource('articles', App\Http\Controllers\ArticleController::class);
     });
 });

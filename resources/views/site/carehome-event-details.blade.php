@@ -74,7 +74,6 @@
                 </div>
             </div>
         </div>
-        <!-- portfolio-details-area-end -->
         
     </main>
 
