@@ -27,7 +27,7 @@
                     @forelse ($articles as $item)
                         <div class="col-lg-4 col-md-6">
                             <div class="blog--post--item mb-40">
-                                @php $profile = $item->cover_image ?  asset('storage/uploads/'.$item->cover_image) : asset('img/default.jpg');   @endphp
+                                @php $profile = $item->cover_image ?  asset('storage/uploads/'.$item->cover_image) : asset('img/default-thumb.jpg');   @endphp
                                 <a href="{{ route('articles', $item->id) }}">
                                     <div class="blog--post--thumb bg-image" style="background-image: url({{$profile}})"></div>
                                 </a>

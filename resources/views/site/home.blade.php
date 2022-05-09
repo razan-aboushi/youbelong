@@ -403,7 +403,7 @@
                         <div class="col-lg-6">
                             <div class="blog-post-item bp-style-one mb-50">
                                 <div class="blog-post-thumb">
-                                    @php $profile = $item->cover_image ?  asset('storage/uploads/'.$item->cover_image) : asset('img/default.jpg');   @endphp
+                                    @php $profile = $item->cover_image ?  asset('storage/uploads/'.$item->cover_image) : asset('img/default-thumb.jpg');   @endphp
                                     <a href="{{ route('articles', $item->id) }}">
                                         <img src="{{ $profile }}" alt="{{ $item->title }}">
                                         <div class="overlay-post-date">{{  $item->created_at->format('d') }} <span>{{  $item->created_at->format('F') }}</span></div>

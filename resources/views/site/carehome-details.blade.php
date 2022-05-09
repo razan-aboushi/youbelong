@@ -3,7 +3,7 @@
 
     <main>
         <section class="breadcrumb-area">
-            @php $profile = $careHome->profile ?  asset('storage/profiles/'.$careHome->profile) : asset('img/default.jpg');   @endphp
+            @php $profile = $careHome->profile ?  asset('storage/profiles/'.$careHome->profile) : asset('img/default-thumb.jpg');   @endphp
             <div class="breadcrumb-bg" data-background="{{ $profile }}"></div>
             <div class="container">
                 <div class="row">

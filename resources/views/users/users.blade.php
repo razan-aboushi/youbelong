@@ -82,7 +82,10 @@
                         @forelse ($users as $user)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $user->name }}</td>
+                                <td>@php $profile = $user->profile ? asset('storage/profiles/'.$user->profile) : asset('img/default-profile.jpg') @endphp
+                                    <span class="profile-img mr-2" style="background-image: url('{{$profile}}')"></span>
+                                    {{ $user->name }}
+                                </td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->phone ?? 'N/A' }}</td>
                                 <td>{{ $user->address ?? 'N/A' }}</td>
@@ -90,7 +93,7 @@
                                 <td>{{ $user->approved ? 'Active' : 'Inactive'}}</td>
                                 <td>{{ $user->created_at ?? 'N/A' }}</td>
                                 <td>
-                                    <a class="btn {{ $user->approved ? 'btn-danger' : 'btn-success' }}" 
+                                    <a class="btn {{ $user->approved ? 'btn-danger' : 'btn-success' }} btn-sm" 
                                         href="{{ route('profile-status', $user->id) }}">{{ $user->approved ? 'suspend' : 'activate' }}
                                     </a>
                                 </td>

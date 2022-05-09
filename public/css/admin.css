@@ -1801,6 +1801,7 @@ pre code {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #e3e6f0;
+    vertical-align: middle;
 }
 
 .table thead th {
@@ -2264,6 +2265,16 @@ select.form-control:focus::-ms-value {
 
 .action-btns * {
     display: inline-block;
+}
+
+.profile-img {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    vertical-align: bottom;
 }
 
 @media (max-width: 767.98px) {
