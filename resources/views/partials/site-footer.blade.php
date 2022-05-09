@@ -1,5 +1,24 @@
 <footer>
-    <div class="footer-top-area theme-bg pt-70 pb-70">
+    <div class="free-quote-area">
+        <div class="container">
+            <div class="free-quote-wrap">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-lg-6">
+                        <div class="free-quote-img"  style="background-image: url({{ asset('img/images/free_quote_img.jpg')}});"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="free-quote-content">
+                            <h4>Announce here</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="free-quote-icon"><i class="flaticon-headphones"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-top-area theme-bg pt-130 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-9">
@@ -31,9 +50,9 @@
                                 <li><a href="{{ route('about-us') }}">About</a></li>
                                 <li><a href="{{ route('contact-us') }}">Contacts</a></li>
                                 <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
+                                <li><a href="{{ route('announcements') }}">Care Home Announcements</a></li>
                                 <li><a href="{{ route('events') }}">Care Home Events</a></li>
                                 <li><a href="{{ route('articles') }}">Articls</a></li>
-                                <li><a href="{{ route('announcements') }}">Announcements</a></li>
                                 <li><a href="{{ route('privacy-policy') }}">privacy policy</a></li>
                             </ul>
                         </div>

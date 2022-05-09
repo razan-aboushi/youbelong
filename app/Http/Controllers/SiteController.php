@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\Article;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
@@ -96,11 +97,17 @@ class SiteController extends Controller
 
     public function announcements($id = null)
     {
+        $announcements = Announcement::where('status', '1')->with('user');
+
         if (!empty($id)) {
-            return view('site.announcement-details');
+            $announcment = $announcements->findOrFail($id);
+
+            return view('site.announcement-details', compact('announcment'));
         }
 
-        return view('site.announcements');
+        $announcements = $announcements->latest()->simplePaginate();
+
+        return view('site.announcements', compact('announcements'));
     }
 
     public function careHomeEvents($id = null)

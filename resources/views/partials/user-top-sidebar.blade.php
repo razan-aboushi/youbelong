@@ -9,10 +9,12 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="userDropdown">
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="{{ route('profile-information') }}">
                     Profile Information
+                </a>
+                <a class="dropdown-item" href="{{ route('home') }}">
+                    Back to website
                 </a>
                 <a class="dropdown-item" href="#" onclick="$('#logout').submit();">
                     Logout

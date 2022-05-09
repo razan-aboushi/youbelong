@@ -35,7 +35,7 @@
                             <div class="blog--post--content">
                                 <h4><a href="{{ route('events', 1) }}">Group dining with the elderly</a></h4>
                                 <ul>
-                                    <li><span><i class="far fa-calendar-alt"></i>25th April 2022</span></li>
+                                    <li><span><i class="flaticon-calendar"></i>25th April 2022</span></li>
                                 </ul>
                                 <ul>
                                     <li><span><i class="far fa-time-alt"></i>From 11 a.m. to 1 p.m</span></li>
@@ -58,7 +58,7 @@
                             <div class="blog--post--content">
                                 <h4><a href="{{ route('events', 2) }}">Elderly Drawing Day</a></h4>
                                 <ul>
-                                    <li><span><i class="far fa-calendar-alt"></i>10th May 2022</span></li>
+                                    <li><span><i class="flaticon-calendar"></i>10th May 2022</span></li>
                                 </ul>
                                 <ul>
                                     <li><span><i class="far fa-time-alt"></i>From 10 a.m. to 12 p.m</span></li>
@@ -81,7 +81,7 @@
                             <div class="blog--post--content">
                                 <h4><a href="{{ route('events', 3) }}">Elderly entertainment day</a></h4>
                                 <ul>
-                                    <li><span><i class="far fa-calendar-alt"></i>12th May 2022</span></li>
+                                    <li><span><i class="flaticon-calendar"></i>12th May 2022</span></li>
                                 </ul>
                                 <ul>
                                     <li><span><i class="far fa-time-alt"></i>From 9 a.m. to 11 a.m</span></li>

@@ -39,16 +39,16 @@
 
     @can('is-carehome')
         <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-fw  fa-calendar"></i>
-                <span>Events</span>
+            <a class="nav-link" href="{{ route('announcements.index') }}">
+                <i class="fas fa-fw fa-bullhorn"></i>
+                <span>Announcements</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fas fa-fw fa-bullhorn"></i>
-                <span>Announcements</span>
+                <i class="fa fa-fw  fa-calendar"></i>
+                <span>Events</span>
             </a>
         </li>
 

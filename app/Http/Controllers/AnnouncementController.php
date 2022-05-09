@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class AnnouncementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,19 +14,19 @@ class ArticleController extends Controller
      */
     public function index(Request $request)
     {
-        $articles = Article::query();
+        $announcements = Announcement::query();
 
         if ($request->has('title') && !is_null($request->title)) {
-            $articles->where('title', 'like', '%' . $request->title . '%');
+            $announcements->where('title', 'like', '%' . $request->title . '%');
         }
 
         if ($request->has('status') && !is_null($request->status)) {
-            $articles->where('status', $request->status);
+            $announcements->where('status', $request->status);
         }
 
-        $articles = $articles->latest()->simplePaginate();
+        $announcements = $announcements->latest()->simplePaginate();
 
-        return view('users.articles.index', compact('articles', 'request'));
+        return view('users.announcements.index', compact('announcements', 'request'));
     }
 
     /**
@@ -36,7 +36,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('users.articles.create');
+        return view('users.announcements.create');
     }
 
     /**
@@ -62,8 +62,10 @@ class ArticleController extends Controller
             $validated['cover_image'] = $fileNameToStore;
         }
 
-        Article::create($validated);
-        return redirect()->route('articles.index')->with('message', 'The article has been updated successfully!');
+        $validated['user_id'] = auth()->user()->id;
+
+        Announcement::create($validated);
+        return redirect()->route('announcements.index')->with('message', 'The Announcement has been updated successfully!');
     }
 
     /**
@@ -85,9 +87,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $article = Article::findOrFail($id);
+        $announcement = Announcement::findOrFail($id);
 
-        return view('users.articles.edit', compact('article'));
+        return view('users.announcements.edit', compact('announcement'));
     }
 
     /**
@@ -99,7 +101,9 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $article = Article::findOrFail($id);
+        $announcement = Announcement::findOrFail($id);
+
+        abort_if($announcement->user_id != auth()->user()->id, 403);
 
         $validated = $this->validate($request, [
             'title' => ['required', 'string', 'max:255'],
@@ -113,15 +117,15 @@ class ArticleController extends Controller
             $extension = $request->file('cover_image')->getClientOriginalExtension();
             $fileNameToStore = time() . '.' . $extension;
             $request->file('cover_image')->storeAs('public/uploads', $fileNameToStore);
-            $article->cover_image = $fileNameToStore;
+            $announcement->cover_image = $fileNameToStore;
         }
 
-        $article->title = $validated['title'];
-        $article->short_description = $validated['short_description'];
-        $article->content = $validated['content'];
-        $article->status = $validated['status'];
-        $article->save();
-        return redirect()->route('articles.index')->with('message', 'The article has been updated successfully!');
+        $announcement->title = $validated['title'];
+        $announcement->short_description = $validated['short_description'];
+        $announcement->content = $validated['content'];
+        $announcement->status = $validated['status'];
+        $announcement->save();
+        return redirect()->route('announcements.index')->with('message', 'The Announcement has been updated successfully!');
     }
 
     /**
@@ -132,9 +136,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $article = Article::findOrFail($id);
-        $article->delete();
+        $announcement = Announcement::findOrFail($id);
+        $announcement->delete();
 
-        return redirect()->route('articles.index')->with('message', 'The article has been deleted successfully!');
+        return redirect()->route('announcements.index')->with('message', 'The Announcement has been deleted successfully!');
     }
 }

@@ -3913,6 +3913,10 @@ label.col-md-4.col-form-label {
     margin-right: 30px;
 }
 
+.blog--post--meta ul li+li {
+    margin-top: 7px;
+}
+
 .blog--post--meta ul li:last-child {
     margin-right: 0;
 }
@@ -3926,7 +3930,7 @@ label.col-md-4.col-form-label {
 
 .blog--post--meta ul li span i,
 .blog--post--meta ul li a i {
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .blog--post--content>p {
@@ -4732,8 +4736,8 @@ label.col-md-4.col-form-label {
 }
 
 .free-quote-wrap {
-    background: #fff;
-    box-shadow: 0px 30px 60px 0px rgba(10, 23, 76, 0.04);
+    background: #f6f6f6;
+    box-shadow: 0px 30px 60px 0px rgb(10 23 76 / 4%);
     position: relative;
     margin-bottom: -76.5px;
     z-index: 1;

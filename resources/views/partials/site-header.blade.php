@@ -13,8 +13,8 @@
                                     <li class="dropdown"><a href="#">Care Home</a>
                                         <ul class="submenu">
                                             <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
-                                            <li><a href="{{ route('events') }}">Events</a></li>
                                             <li><a href="{{ route('announcements') }}">Announcements</a></li>
+                                            <li><a href="{{ route('events') }}">Events</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{{ route('articles') }}">Articles</a></li>

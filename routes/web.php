@@ -39,6 +39,10 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
         Route::get('/contact-request-lists', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
     });
 
+    Route::middleware('can:is-carehome')->group(function () {
+        Route::resource('announcements', App\Http\Controllers\AnnouncementController::class);
+    });
+
     Route::middleware('admin')->group(function () {
         Route::get('/user-lists', [App\Http\Controllers\UserController::class, 'users'])->name('users');
         Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');

@@ -31,7 +31,7 @@
                                 <h2>{{ $article->title }}</h2>
                                 <div class="blog--post--meta mb-20">
                                     <ul>
-                                        <li><span><i class="far fa-calendar-alt"></i>{{ $article->created_at->diffForHumans() }}</span></li>
+                                        <li><span><i class="flaticon-calendar"></i>{{ $article->created_at->diffForHumans() }}</span></li>
                                     </ul>
                                 </div>
                                 {!!  $article->content !!}
