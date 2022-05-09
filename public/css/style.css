@@ -399,6 +399,7 @@ label.col-md-4.col-form-label {
 .about-style-four .about-info-wrap .content span,
 .services-content h3 a:hover,
 .service-icon,
+.fact-icon,
 .portfolio-widget-cat ul li>a:hover span,
 .portfolio-menu button i,
 .cta-box-content h3,
@@ -425,6 +426,7 @@ label.col-md-4.col-form-label {
 .slider-content h2 .icon,
 .slider-active .slick-dots li.slick-active button,
 .services-item:hover .service-icon,
+.services-item:hover .fact-icon,
 .services-item::after,
 .single-skill-item .progress-bar,
 .single-skill-item .progress-bar span,
@@ -1982,6 +1984,20 @@ label.col-md-4.col-form-label {
     text-align: center;
     line-height: 90px;
     margin: 35px auto 0;
+    background: #fff;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+
+.fact-icon {
+    font-size: 54px;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    line-height: 90px;
     background: #fff;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;

@@ -37,6 +37,29 @@
         </li>
     @endcan
 
+    @can('is-carehome')
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fa fa-fw  fa-calendar"></i>
+                <span>Events</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-bullhorn"></i>
+                <span>Announcements</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-credit-card"></i>
+                <span>Donation</span>
+            </a>
+        </li>
+    @endif
+
     <li class="nav-item">
         <a class="nav-link" href="#" onclick="$('#logout').submit();">
             <i class="fas fa-fw fa-sign-out"></i>

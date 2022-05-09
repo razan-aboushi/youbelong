@@ -53,72 +53,69 @@
         </div>
     </section>
 
-    <!-- services-area -->
     <section class="services-area pt-120 pb-90">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                     <div class="services-item text-center mb-30">
-                        <div class="services-overlay-icon"><i class="flaticon-capsules"></i></div>
+                        <div class="services-overlay-icon"><i class="flaticon-calendar"></i></div>
                         <div class="service-content">
                             <h6 class="count">01</h6>
-                            <h4><a href="services-details.html"> Events </a></h4>
+                            <h4>Events</h4>
                             <p>These are events held by care homes where they put information to indicate when and where the event is, 
                                 and individuals and companies can join or cancel it</p>
                         </div>
                         <div class="service-icon">
-                            <i class="flaticon-capsules"></i>
+                            <i class="flaticon-calendar"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                     <div class="services-item text-center mb-30">
-                        <div class="services-overlay-icon"><i class="flaticon-old-man"></i></div>
+                        <div class="services-overlay-icon"><i class="flaticon-notification"></i></div>
                         <div class="service-content">
                             <h6 class="count">02</h6>
-                            <h4><a href="services-details.html">Announcements</a></h4>
+                            <h4>Announcements</h4>
                             <p>Care homes publish and express their needs, whether for basic materials or supplements, 
                             thus to be responded to by the users who can provide them with assistance</p>
                         </div>
                         <div class="service-icon">
-                            <i class="flaticon-old-man"></i>
+                            <i class="flaticon-notification"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                     <div class="services-item text-center mb-30">
-                        <div class="services-overlay-icon"><i class="flaticon-pinwheel"></i></div>
+                        <div class="services-overlay-icon"><i class="flaticon-message"></i></div>
                         <div class="service-content">
                             <h6 class="count">03</h6>
-                            <h4><a href="services-details.html">Messages</a></h4>
+                            <h4>Messages</h4>
                             <p>Individuals and companies can send a message to care homes to tell them everything they want,
                                  and also includes the sender's information so that the care homes can respond to it</p>
                         </div>
                         <div class="service-icon">
-                            <i class="flaticon-pinwheel"></i>
+                            <i class="flaticon-message"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                     <div class="services-item text-center mb-30">
-                        <div class="services-overlay-icon"><i class="flaticon-clock"></i></div>
+                        <div class="services-overlay-icon"><i class="flaticon-pay"></i></div>
                         <div class="service-content">
                             <h6 class="count">04</h6>
-                            <h4><a href="services-details.html">Donations</a></h4>
+                            <h4>Donations</h4>
                             <p>The users can donate to care homes through the bank account numbers of these homes, 
                                 or the immediate payment system to transfer funds "Cliq" in an easy way</p>
                         </div>
                         <div class="service-icon">
-                            <i class="flaticon-clock"></i>
+                            <i class="flaticon-pay"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- services-area-end -->
 
-    <!-- skill-area -->
     <section class="skill-area theme-bg pt-120 pb-120">
         <div class="skill-overlay-img" data-background="img/images/skill_overlay_img.jpg">
             <a href="https://www.youtube.com/watch?v=YPF_KMixLNE" class="popup-video"><i class="fas fa-play"></i></a>
@@ -158,17 +155,15 @@
             </div>
         </div>
     </section>
-    <!-- skill-area-end -->
 
-    <!-- fact-area -->
     <section class="fact-area pt-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="fact-item mb-50">
                         <div class="fact-top-wrap">
-                            <div class="icon">
-                                <img src="img/icon/carehome2.jpg" alt="">
+                            <div class="fact-icon">
+                                <i class="flaticon-heart-3"></i>
                             </div>
                             <h2><span class="odometer" data-count="9">00</span></h2>
                         </div>
@@ -180,8 +175,8 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="fact-item mb-50">
                         <div class="fact-top-wrap">
-                            <div class="icon">
-                                <img src="img/icon/carehome1.jpg" alt="">
+                            <div class="fact-icon">
+                                <i class="flaticon-old-man"></i>
                             </div>
                             <h2><span class="odometer" data-count="355">00</span></h2>
                         </div>
@@ -193,37 +188,33 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="fact-item mb-50">
                         <div class="fact-top-wrap">
-                            <div class="icon">
-                                <img src="img/icon/fact_icon03.png" alt="">
+                            <div class="fact-icon">
+                                <i class="flaticon-nurse"></i>
                             </div>
                             <h2><span class="odometer" data-count="71">00</span></h2>
                         </div>
                         <div class="fact-content">
                             <h4>The number of workers in all care homes</h4>
-                            
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="fact-item mb-50">
                         <div class="fact-top-wrap">
-                            <div class="icon">
-                                <img src="img/icon/fact_icon04.png" alt="">
+                            <div class="fact-icon">
+                                <i class="flaticon-user"></i>
                             </div>
                             <h2><span class="odometer" data-count="20">00</span></h2>
                         </div>
                         <div class="fact-content">
                             <h4>The number Of current users on the web site</h4>
-                         
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- fact-area-end -->
-
-    <!-- faq-area -->
+ 
     <section class="faq-area pt-65 pb-120">
         <div class="container">
             <div class="row align-items-center">
@@ -270,9 +261,7 @@
             </div>
         </div>
     </section>
-    <!-- faq-area-end -->
 
-    <!-- testimonial-area -->
     <section class="testimonial-area position-relative gray-bg pt-120 pb-120">
         <div class="testi-bg" data-background="img/bg/testi_bg.jpg"></div>
         <div class="container">
@@ -384,7 +373,6 @@
             </div>
         </div>
     </section>
-    <!-- testimonial-area-end -->
 
     @if (!$latest_articles->isEmpty())
         <section class="blog-area pt-120 pb-70">
@@ -421,4 +409,4 @@
         </section>
     @endif
 
-    @endsection
+@endsection
