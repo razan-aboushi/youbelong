@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advertisement;
 use App\Models\Announcement;
 use App\Models\Article;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class SiteController extends Controller
 {
@@ -118,5 +120,18 @@ class SiteController extends Controller
         }
 
         return view('site.carehome-events');
+    }
+
+    public function utm($id)
+    {
+        $ad = Advertisement::findOrFail($id);
+        $ad->clicks = $ad->clicks + 1;
+        $ad->save();
+
+        if ($ad->url) {
+            return Redirect::to($ad->url);
+        }
+
+        return redirect()->route('home');
     }
 }

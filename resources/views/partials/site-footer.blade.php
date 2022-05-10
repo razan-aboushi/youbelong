@@ -1,24 +1,32 @@
-<footer>
+<footer>    
     <div class="free-quote-area">
         <div class="container">
             <div class="free-quote-wrap">
                 <div class="row no-gutters align-items-center">
                     <div class="col-lg-6">
-                        <div class="free-quote-img"  style="background-image: url({{ asset('img/images/free_quote_img.jpg')}});"></div>
+                        @if ($active_ad)
+                        @php $profile = $active_ad->banner ?  asset('storage/ads/'.$active_ad->banner) : asset('img/default-ad.jpg');   @endphp
+
+                            <a href="{{ route('utm', $active_ad->id) }}" target="_blank">
+                                <div class="free-quote-img"  style="background-image: url({{ $profile  }});"></div>
+                            </a>
+                        @else
+                            <div class="free-quote-img"  style="background-image: url({{ asset('img/default-ad.jpg') }});"></div>
+                        @endif
                     </div>
                     <div class="col-lg-6">
                         <div class="free-quote-content">
-                            <h4>Announce here</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h4>Advertise here</h4>
+                            <p>Get your business in front of thousands guests.</p>
+                            <a class="btn btm-sm mt-3" href="{{ route('contact-us') }}">Contact Us</a>
                         </div>
                     </div>
                 </div>
-                <div class="free-quote-icon"><i class="flaticon-headphones"></i></div>
             </div>
         </div>
     </div>
 
-    <div class="footer-top-area theme-bg pt-130 pb-70">
+    <div class="footer-top-area theme-bg pt-140 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-9">

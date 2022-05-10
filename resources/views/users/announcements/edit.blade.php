@@ -6,7 +6,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Edit an announcement</h6>
         </div>
         <div class="card-body">
-            <form name="create-announcement" method="post" action="{{ route('announcements.update', $announcement->id) }}" enctype="multipart/form-data">
+            <form name="edit-announcement" method="post" action="{{ route('announcements.update', $announcement->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('put')
 

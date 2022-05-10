@@ -28,6 +28,8 @@ Route::get('/events/{id?}', [App\Http\Controllers\SiteController::class, 'careHo
 Route::get('/articles/{id?}', [App\Http\Controllers\SiteController::class, 'articles'])->name('articles');
 Route::get('/announcements/{id?}', [App\Http\Controllers\SiteController::class, 'announcements'])->name('announcements');
 Route::get('/privacy-policy', [App\Http\Controllers\SiteController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/utm/{id}', [App\Http\Controllers\SiteController::class, 'utm'])->name('utm');
+
 
 # user routes
 Route::middleware(['auth'])->prefix('/portal/')->group(function () {
@@ -49,5 +51,6 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
 
         Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');
         Route::resource('articles', App\Http\Controllers\ArticleController::class);
+        Route::resource('advertisements', App\Http\Controllers\AdvertisementController::class);
     });
 });

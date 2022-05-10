@@ -6,7 +6,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Edit an article</h6>
         </div>
         <div class="card-body">
-            <form name="create-article" method="post" action="{{ route('articles.update', $article->id) }}" enctype="multipart/form-data">
+            <form name="edit-article" method="post" action="{{ route('articles.update', $article->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('put')
 

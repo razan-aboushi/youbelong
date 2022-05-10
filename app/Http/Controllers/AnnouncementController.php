@@ -65,7 +65,7 @@ class AnnouncementController extends Controller
         $validated['user_id'] = auth()->user()->id;
 
         Announcement::create($validated);
-        return redirect()->route('announcements.index')->with('message', 'The Announcement has been updated successfully!');
+        return redirect()->route('announcements.index')->with('message', 'The Announcement has been created successfully!');
     }
 
     /**

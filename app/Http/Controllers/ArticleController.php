@@ -63,7 +63,7 @@ class ArticleController extends Controller
         }
 
         Article::create($validated);
-        return redirect()->route('articles.index')->with('message', 'The article has been updated successfully!');
+        return redirect()->route('articles.index')->with('message', 'The article has been created successfully!');
     }
 
     /**

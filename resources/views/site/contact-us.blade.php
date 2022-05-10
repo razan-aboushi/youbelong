@@ -57,6 +57,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-grp">
@@ -71,10 +72,9 @@
                                         <select class="custom-select @error('subject') is-invalid @enderror" name="subject">
                                             <option value="" selected="">Select Subject</option>
                                             <option @if (old('subject') == 'Care homes') selected @endif>Care homes</option>
-                                            <option @if (old('subject') == 'Events') selected @endif>Events</option>
-                                            <option @if (old('subject') == 'Donation') selected @endif>Donation</option>
                                             <option @if (old('subject') == 'Messages for care homes') selected @endif>Messages for care homes</option>
                                             <option @if (old('subject') == 'How the website works') selected @endif>How the website works</option>
+                                            <option @if (old('subject') == 'Advertisement') selected @endif>Advertisement</option>
                                             <option @if (old('subject') == 'Other things') selected @endif>Other things</option>
                                         </select>
                                         @error('subject')
@@ -83,6 +83,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="form-grp">
                                 <textarea name="message" id="message" placeholder="Enter messages" class="@error('message') is-invalid @enderror">{{ old('message') }}</textarea>
                                 @error('message')

@@ -15,7 +15,6 @@ class UserController extends Controller
     public function index()
     {
         if (auth()->user()->can('is-admin')) {
-
             $number_of_users = User::whereHas('role', function ($r) {
                 $r->where('name', '!=', 'admin');
             })->count();

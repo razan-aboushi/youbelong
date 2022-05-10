@@ -26,6 +26,13 @@
                 <span>Articles</span>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('advertisements.index') }}">
+                <i class="fa fa-ad"></i>
+                <span>Advertisements</span>
+            </a>
+        </li>
     @endcan
 
     @can('access-contacts-list')
