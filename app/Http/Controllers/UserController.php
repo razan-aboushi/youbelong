@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\CsvExport;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\User;
@@ -48,7 +49,7 @@ class UserController extends Controller
         return view('users.contact-us', compact('contacts', 'request'));
     }
 
-    public function users(Request $request)
+    public function users(Request $request, $export = 0)
     {
         $users = User::whereHas('role', function ($r) {
             $r->where('name', '!=', 'admin');
@@ -68,6 +69,10 @@ class UserController extends Controller
 
         if ($request->has('approved') && !is_null($request->approved)) {
             $users->where('approved', $request->approved);
+        }
+
+        if ($export) {
+            return $users;
         }
 
         $users = $users->with(['role'])->latest()->simplePaginate();
@@ -169,5 +174,28 @@ class UserController extends Controller
         $user->save();
 
         return back()->with('message', 'The user has been updated successfully!');
+    }
+
+    public function export(Request $request)
+    {
+        $users = $this->users($request, 1)->with(['role'])->get();
+
+        $array_data = [];
+        $loop = 0;
+        foreach ($users as $user) {
+            $array_data[$loop] = [
+                'ID' => ++$loop,
+                'Name' => $user->name,
+                'Email' => $user->email,
+                'Phone' => $user->phone,
+                'Address' => $user->address,
+                'Role' => $user->role->name,
+                'Status' => $user->approved ? 'Active' : 'Inactive',
+                'Reg. Date' => $user->created_at,
+            ];
+        }
+
+        CsvExport::put($array_data);
+        return redirect()->back();
     }
 }

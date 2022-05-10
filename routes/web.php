@@ -44,7 +44,9 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
     });
 
     Route::middleware('admin')->group(function () {
-        Route::get('/user-lists', [App\Http\Controllers\UserController::class, 'users'])->name('users');
+        Route::get('/user-lists/{export?}', [App\Http\Controllers\UserController::class, 'users'])->name('users');
+        Route::get('/export-user-lists', [App\Http\Controllers\UserController::class, 'export'])->name('users.export');
+
         Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');
         Route::resource('articles', App\Http\Controllers\ArticleController::class);
     });

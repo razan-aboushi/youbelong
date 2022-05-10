@@ -33,7 +33,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <input type="submit" value="Filter" class="btn btn-success"/>
+                            <input type="submit" value="Generate" class="btn btn-success"/>
                             <a href="{{ route('announcements.index') }}" class="btn btn-danger">Reset</a>
                         </div>
                     </div>
