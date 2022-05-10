@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\CsvExport;
+use App\Models\Article;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\User;
@@ -14,7 +15,16 @@ class UserController extends Controller
     public function index()
     {
         if (auth()->user()->can('is-admin')) {
-            return view('users.admin-dashboard');
+
+            $number_of_users = User::whereHas('role', function ($r) {
+                $r->where('name', '!=', 'admin');
+            })->count();
+
+            $number_of_articles = Article::count();
+
+            $number_of_contact_us = Contact::count();
+
+            return view('users.admin-dashboard', compact('number_of_users', 'number_of_articles', 'number_of_contact_us'));
         } else {
             return view('users.user-dashboard');
         }
