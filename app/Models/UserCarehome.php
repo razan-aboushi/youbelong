@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CareHome extends Model
+class UserCarehome extends Model
 {
     use HasFactory;
 
@@ -17,9 +17,9 @@ class CareHome extends Model
     ];
 
     protected $fillable = [
+        'user_id',
         'elderlies_number',
         'establishment_date',
-        'user_id',
         'bio',
         'short_description',
     ];

@@ -66,10 +66,11 @@ class SiteController extends Controller
     {
         $careHomes = User::whereHas('role', function ($r) {
             $r->where('name', 'carehome');
-        })->where('approved', '1')->with('careHome');
+        })->where('approved', '1')->with('userCarehome');
 
         if (!empty($id)) {
             $careHome = $careHomes->findOrFail($id);
+
             return view('site.carehome-details', compact('careHome'));
         }
 

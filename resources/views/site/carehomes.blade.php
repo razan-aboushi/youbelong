@@ -33,7 +33,7 @@
                                 </a>
                                 <div class="blog--post--content">
                                     <h4><a href="{{ route('care-homes', $item->id) }}">{{ $item->name }}</a></h4>
-                                    <p>{{ $item->careHome?->short_description }}</p>
+                                    <p>{{ $item->userCarehome?->short_description }}</p>
                                     <div class="blog--post--bottom">
                                         <div class="blog--read--more">
                                             <a href="{{ route('care-homes', $item->id) }}"><i class="far fa-arrow-right"></i>Read More</a>

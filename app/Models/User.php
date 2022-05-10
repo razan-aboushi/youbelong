@@ -16,12 +16,9 @@ class User extends Authenticatable
         'email',
         'password',
         'phone',
-        'birthdate',
         'profile',
         'address',
-        'gender',
         'role_id',
-        'sector',
         'approved',
     ];
 
@@ -30,17 +27,23 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
     public function role()
     {
         return $this->belongsTo(Role::class);
     }
 
-    public function careHome()
+    public function userCarehome()
     {
-        return $this->hasOne(CareHome::class);
+        return $this->hasOne(UserCarehome::class);
+    }
+
+    public function userIndividual()
+    {
+        return $this->hasOne(UserIndividual::class);
+    }
+
+    public function userCompany()
+    {
+        return $this->hasOne(UserCompany::class);
     }
 }

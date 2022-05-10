@@ -59,11 +59,13 @@
                         <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
                         <div class="col-md-6">
                             <div class="form-check form-check-inline  @error('gender') is-invalid @enderror">
-                                <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male" @if (old('gender') == 'male') checked @elseif ($user->gender == 'male') checked @endif>
+                                <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male" 
+                                @if (old('gender') == 'male') checked @elseif ($user->userIndividual?->gender == 'male') checked @endif>
                                 <label class="form-check-label" for="gender_male">Male</label>
                             </div>
                             <div class="form-check form-check-inline  @error('gender') is-invalid @enderror">
-                                <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female" @if (old('gender') == 'female') checked @elseif ($user->gender == 'female') checked @endif>
+                                <input class="form-check-input" type="radio" name="gender" id="gender_female" value="female" 
+                                @if (old('gender') == 'female') checked @elseif ($user->userIndividual?->gender == 'female') checked @endif>
                                 <label class="form-check-label" for="gender_female">Famale</label>
                             </div>
                             
@@ -78,7 +80,7 @@
                     <div class="row mb-3">
                         <label for="birthdate" class="col-md-4 col-form-label text-md-end">{{ __('Birthdate') }}</label>
                         <div class="col-md-6">
-                            <input id="birthdate" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{ old('birthdate') ?? $user->birthdate  }}">
+                            <input id="birthdate" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" value="{{ old('birthdate') ?? $user->userIndividual?->birthdate  }}">
                             @error('birthdate')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -93,11 +95,11 @@
                         <label for="sector" class="col-md-4 col-form-label text-md-end">{{ __('Sector') }}</label>
                         <div class="col-md-6">
                             <div class="form-check form-check-inline  @error('sector') is-invalid @enderror">
-                                <input class="form-check-input" type="radio" name="sector" id="sector_public" value="public" @if (old('sector') == 'public') checked @elseif ($user->sector == 'public') checked @endif>
+                                <input class="form-check-input" type="radio" name="sector" id="sector_public" value="public" @if (old('sector') == 'public') checked @elseif ($user->userCompany?->sector == 'public') checked @endif>
                                 <label class="form-check-label" for="sector_public">Public</label>
                             </div>
                             <div class="form-check form-check-inline  @error('sector') is-invalid @enderror">
-                                <input class="form-check-input" type="radio" name="sector" id="sector_private" value="private" @if (old('sector') == 'private') checked @elseif ($user->sector == 'private') checked @endif>
+                                <input class="form-check-input" type="radio" name="sector" id="sector_private" value="private" @if (old('sector') == 'private') checked @elseif ($user->userCompany->sector == 'private') checked @endif>
                                 <label class="form-check-label" for="sector_private">Private</label>
                             </div>
                             @error('sector')
@@ -115,11 +117,11 @@
                         <div class="col-md-6">
                             <select name="elderlies_number" id="elderlies_number" class="form-control" @error('elderlies_number') is-invalid @enderror>
                                 <option value="">Number of Elderlies</option>
-                                @foreach (App\Models\CareHome::$elderlies_range as $range_key => $range_value)
+                                @foreach (App\Models\UserCarehome::$elderlies_range as $range_key => $range_value)
                                     <option 
                                     @if (old('elderlies_number') == $range_key) 
                                         selected
-                                    @elseif ($user->careHome?->elderlies_number == $range_key)
+                                    @elseif ($user->userCarehome?->elderlies_number == $range_key)
                                         selected
                                     @endif 
                                     value="{{ $range_key }}">{{ $range_value }}</option>
@@ -137,7 +139,7 @@
                     <div class="row mb-3">
                         <label for="establishment_date" class="col-md-4 col-form-label text-md-end">{{ __('Date of Establishment') }}</label>
                         <div class="col-md-6">
-                            <input id="establishment_date" type="date" class="form-control @error('establishment_date') is-invalid @enderror" name="establishment_date" value="{{ old('establishment_date') ?? $user->careHome?->establishment_date }}">
+                            <input id="establishment_date" type="date" class="form-control @error('establishment_date') is-invalid @enderror" name="establishment_date" value="{{ old('establishment_date') ?? $user->userCarehome?->establishment_date }}">
                             @error('establishment_date')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -149,7 +151,7 @@
                     <div class="row mb-3">
                         <label for="short_description" class="col-md-4 col-form-label text-md-end">{{ __('Short Description') }}</label>
                         <div class="col-md-6">
-                            <textarea rows="3" id="short_description" class="form-control @error('short_description') is-invalid @enderror" name="short_description">{{ old('short_description') ?? $user->careHome?->short_description }}</textarea>
+                            <textarea rows="3" id="short_description" class="form-control @error('short_description') is-invalid @enderror" name="short_description">{{ old('short_description') ?? $user->userCarehome?->short_description }}</textarea>
                             @error('short_description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -161,7 +163,7 @@
                     <div class="row mb-3">
                         <label for="bio" class="col-md-4 col-form-label text-md-end">{{ __('Bio') }}</label>
                         <div class="col-md-6">
-                            <textarea rows="5" id="bio" class="form-control text-editor @error('bio') is-invalid @enderror" name="bio">{{ old('bio') ?? $user->careHome?->bio }}</textarea>
+                            <textarea rows="5" id="bio" class="form-control text-editor @error('bio') is-invalid @enderror" name="bio">{{ old('bio') ?? $user->userCarehome?->bio }}</textarea>
                             @error('bio')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

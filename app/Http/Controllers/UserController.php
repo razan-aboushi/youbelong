@@ -77,14 +77,14 @@ class UserController extends Controller
 
     public function profileInformation()
     {
-        $user = User::with(['careHome', 'role'])->findOrFail(auth()->user()->id);
+        $user = User::with(['userCarehome', 'userIndividual', 'userCompany', 'role'])->findOrFail(auth()->user()->id);
 
         return view('users.profile-information', compact('user'));
     }
 
     public function storeProfileInformation(Request $request)
     {
-        $user = User::with(['careHome', 'role'])->findOrFail(auth()->user()->id);
+        $user = User::with(['userCarehome', 'userIndividual', 'userCompany', 'role'])->findOrFail(auth()->user()->id);
 
         $role = $user->role->name;
 
@@ -125,8 +125,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->address = $request->address;
-        $user->gender = $request->gender;
-        $user->birthdate = $request->birthdate;
+
         if ($request->password) {
             $user->password = $request->password;
         }
@@ -136,16 +135,28 @@ class UserController extends Controller
             $request->file('profile')->storeAs('public/profiles', $fileNameToStore);
             $user->profile = $fileNameToStore;
         }
-        $user->sector = $request->sector;
         $user->save();
 
-        $careHome = $user->careHome;
-        if ($careHome) {
-            $careHome->elderlies_number = $request->elderlies_number;
-            $careHome->establishment_date = $request->establishment_date;
-            $careHome->bio = $request->bio;
-            $careHome->short_description = $request->short_description;
-            $careHome->save();
+        $userCarehome = $user->userCarehome;
+        if ($userCarehome) {
+            $userCarehome->elderlies_number = $request->elderlies_number;
+            $userCarehome->establishment_date = $request->establishment_date;
+            $userCarehome->bio = $request->bio;
+            $userCarehome->short_description = $request->short_description;
+            $userCarehome->save();
+        }
+
+        $userCompany = $user->userCompany;
+        if ($userCompany) {
+            $userCompany->sector = $request->sector;
+            $userCompany->save();
+        }
+
+        $userIndividual = $user->userIndividual;
+        if ($userIndividual) {
+            $userIndividual->gender = $request->gender;
+            $userIndividual->birthdate = $request->birthdate;
+            $userIndividual->save();
         }
 
         return back()->with('message', 'The profile information has been updated successfully!');

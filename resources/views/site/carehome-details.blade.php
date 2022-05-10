@@ -27,7 +27,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="portfolio-details-content">
-                            {!!  $careHome->carehome?->bio !!}
+                            {!!  $careHome->userCarehome?->bio !!}
                         </div>
                       
                         <div class="contact-form-wrap p-5">
@@ -121,15 +121,19 @@
                                         <p class="small">{{ $careHome->address }}</p>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <h6>Elderlies Number:</h6>
-                                        <p class="small">{{ \App\Models\CareHome::$elderlies_range[$careHome->careHome->elderlies_number] }}</p>
-                                    </div>
+                                    @if ($careHome->userCarehome?->elderlies_number)
+                                        <div class="mb-3">
+                                            <h6>Elderlies Number:</h6>
+                                            <p class="small">{{ \App\Models\UserCarehome::$elderlies_range[$careHome->userCarehome?->elderlies_number] }}</p>
+                                        </div>
+                                    @endif
 
-                                    <div class="mb-3">
-                                        <h6>Establishment Date:</h6>
-                                        <p class="small">{{ $careHome->careHome->establishment_date }}</p>
-                                    </div>
+                                        @if ($careHome->userCarehome?->establishment_date)
+                                        <div class="mb-3">
+                                            <h6>Establishment Date:</h6>
+                                            <p class="small">{{ $careHome->userCarehome?->establishment_date }}</p>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </aside>

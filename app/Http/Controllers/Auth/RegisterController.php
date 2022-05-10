@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\CareHome;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\UserCarehome;
+use App\Models\UserCompany;
+use App\Models\UserIndividual;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
@@ -90,21 +92,32 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'phone' => $data['phone'],
-            'birthdate' => $data['birthdate'] ?? null,
-            'gender' => $data['gender'] ?? null,
             'address' => $data['address'],
             'role_id' => Role::where('name', $data['role'])->first()->id,
-            # only for company
-            'sector' => $data['sector'] ?? null,
             'approved' => $data['role'] != 'carehome',
         ]);
 
         # for homecares
         if ($data['role'] == 'carehome') {
-            CareHome::create([
+            UserCarehome::create([
                 'user_id' => $userObj->id,
                 'elderlies_number' => $data['elderlies_number'],
                 'establishment_date' => $data['establishment_date'],
+            ]);
+        }
+
+        if ($data['role'] == 'individual') {
+            UserIndividual::create([
+                'user_id' => $userObj->id,
+                'birthdate' => $data['birthdate'],
+                'gender' => $data['gender'],
+            ]);
+        }
+
+        if ($data['role'] == 'company') {
+            UserCompany::create([
+                'user_id' => $userObj->id,
+                'sector' => $data['sector'],
             ]);
         }
 
