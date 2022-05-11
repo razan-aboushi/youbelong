@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate()->after('id');
             $table->string('subject');
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->index();
             $table->string('phone');
             $table->text('message');
             $table->timestamps();
