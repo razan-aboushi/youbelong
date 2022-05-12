@@ -31,7 +31,7 @@
                                 <h2>{{ $announcment->title }}</h2>
                                 <div class="blog--post--meta mb-20">
                                     <ul>
-                                        <li><span><i class="flaticon-calendar"></i>{{ $announcment->created_at->diffForHumans() }}</span></li>
+                                        <li><span><i class="flaticon-wall-clock"></i>{{ $announcment->created_at->diffForHumans() }}</span></li>
                                         <li><span><i class="flaticon-heart-3"></i>{{ $announcment->user->name }}</span></li>
                                     </ul>
                                 </div>

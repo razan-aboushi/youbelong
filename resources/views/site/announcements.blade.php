@@ -12,7 +12,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Announcements</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Care Homes</li>
                                 </ol>
                             </nav>
                         </div>
@@ -35,8 +35,8 @@
                                     <h4><a href="{{ route('announcements', $item->id) }}">{{ $item->title }}</a></h4>
                                     <div class="blog--post--meta mb-20">
                                         <ul>
-                                            <li><span><i class="flaticon-calendar"></i>{{ $item->created_at->diffForHumans() }}</span></li>
-                                            <li><span><i class="flaticon-heart-3"></i>{{ $item->user->name }}</span></li>
+                                            <li><span><i class="flaticon-wall-clock"></i>{{ $item->created_at->diffForHumans() }}</span></li>
+                                            <li><span><i class="flaticon-heart-3"></i>{{ $item->user?->name }}</span></li>
                                         </ul>
                                     </div>
                                     <p>{{ $item->short_description }}</p>
@@ -52,8 +52,7 @@
                         <div class="col-lg-6">
                             <div class="alert alert-info">No announcements added yet!</div>
                         </div>
-                @endforelse
-                 
+                    @endforelse
                 </div>
 
                 <div class="row justify-content-center text-center">

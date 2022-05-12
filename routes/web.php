@@ -30,12 +30,14 @@ Route::get('/announcements/{id?}', [App\Http\Controllers\SiteController::class, 
 Route::get('/privacy-policy', [App\Http\Controllers\SiteController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/utm/{id}', [App\Http\Controllers\SiteController::class, 'utm'])->name('utm');
 
-
 # user routes
 Route::middleware(['auth'])->prefix('/portal/')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\UserController::class, 'index'])->name('dashboard');
     Route::get('/profile-information', [App\Http\Controllers\UserController::class, 'profileInformation'])->name('profile-information');
     Route::put('/profile-information', [App\Http\Controllers\UserController::class, 'storeProfileInformation'])->name('update-profile-information');
+
+    Route::get('/event-seat/{event_id}', [App\Http\Controllers\UserEventController::class, 'reserveEventSeat'])->name('reserve-event-seat');
+
 
     Route::middleware('can:access-contacts-list')->group(function () {
         Route::get('/contact-request-lists', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
@@ -43,6 +45,9 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
 
     Route::middleware('can:is-carehome')->group(function () {
         Route::resource('announcements', App\Http\Controllers\AnnouncementController::class);
+        Route::resource('events', App\Http\Controllers\EventController::class);
+        Route::get('user-events/{event_id}', [App\Http\Controllers\UserEventController::class, 'index'])->name('user-events');
+        Route::delete('delete/user-events/{event_id}', [App\Http\Controllers\UserEventController::class, 'destroy'])->name('delete-user-events');
     });
 
     Route::middleware('admin')->group(function () {

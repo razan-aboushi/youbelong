@@ -39,17 +39,6 @@ class UserTransactionController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\UserTransaction  $userTransaction
-     * @return \Illuminate\Http\Response
-     */
-    public function show(UserTransaction $userTransaction)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\UserTransaction  $userTransaction

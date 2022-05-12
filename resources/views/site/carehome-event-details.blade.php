@@ -2,18 +2,18 @@
 @section('content')
 
     <main>
-        <!-- breadcrumb-area -->
         <section class="breadcrumb-area">
-            <div class="breadcrumb-bg" data-background="{{ asset('img/bg/LunchEvent.jpg') }}"></div>
+            @php $profile = $event->cover_image ? asset('storage/uploads/'.$event->cover_image) : asset('img/default-thumb.jpg');   @endphp
+            <div class="breadcrumb-bg" data-background="{{ $profile }}"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb-content">
-                            <h2 class="title">Care Home Details</h2>
+                            <h2 class="title">{{ $event->title }}</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Care Home Event Details</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Events</li>
                                 </ol>
                             </nav>
                         </div>
@@ -21,19 +21,34 @@
                 </div>
             </div>
         </section>
-        <!-- breadcrumb-area-end -->
 
-        <!-- portfolio-details-area -->
         <div class="portfolio-details-area pt-120 pb-120">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="portfolio-details-content">
-                           <p>  <h2>The event will be held in the guest house for the elderly, 
-                                where we will have a group lunch with the elderly to give them a nice time and entertain themselves.This event will be held from 11 am to 1 pm .
-                                We are glad to have you join us. </h2></p>
-                    
-                           
+                            @if (\Session::has('message'))
+                                <div class="alert alert-info small">{!! \Session::get('message') !!}</div>
+                            @endif
+
+                            <h2>{{ $event->title }}</h2>
+                            <div class="blog--post--meta mb-20">
+                                <ul>
+                                    <li><span><i class="flaticon-wall-clock"></i>{{ $event->created_at->diffForHumans() }}</span></li>
+                                    <li><span><i class="flaticon-heart-3"></i>{{ $event->user->name }}</span></li>
+                                </ul>
+                            </div>
+                            {!!  $event->content !!}
+
+                            @if ($event->users_count >= $event->attendees)
+                                <a class="btn btm-sm mt-3 disabled" href="#">Event is full</a>
+                            @else 
+                                @if (!$check_reservation)
+                                    <a class="btn btm-sm mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Join</a>
+                                @else 
+                                    <a class="btn btm-sm btn-danger mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Cancel Reservation</a>
+                                @endif
+                            @endif 
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-7">
@@ -44,28 +59,28 @@
                                 </div>
                                 <div class="portfolio-widget-cat">
                                     <div class="mb-3">
-                                        <h6>Email:</h6>
-                                        <p class="small">GuestH@gmail.com</p>
+                                        <h6>Date:</h6>
+                                        <p class="small">{{ $event->date }}</p>
                                     </div>
 
                                     <div class="mb-3">
-                                        <h6>Phone:</h6>
-                                        <p class="small">96264126924</p>
+                                        <h6>Time:</h6>
+                                        <p class="small">{{ date('H:i A', strtotime($event->from_time)) }} - {{ date('H:i A', strtotime($event->to_time)) }}</p>
                                     </div>
 
                                     <div class="mb-3">
                                         <h6>Location:</h6>
-                                        <p class="small"> Amman / Juwaida , Jordan</p>
+                                        <p class="small">{{ $event->location }}</p>
                                     </div>
 
                                     <div class="mb-3">
-                                        <h6>Elderlies Number:</h6>
-                                        <p class="small">51</p>
+                                        <h6>Number of attendies:</h6>
+                                        <p class="small">{{ $event->attendees }}</p>
                                     </div>
 
                                     <div class="mb-3">
-                                        <h6>Establishment Date:</h6>
-                                        <p class="small">1979, May, 7</p>
+                                        <h6>Number of joined users:</h6>
+                                        <p class="small">{{ $event->users_count }}</p>
                                     </div>
                                 </div>
                             </div>

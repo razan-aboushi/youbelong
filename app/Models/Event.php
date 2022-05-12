@@ -10,19 +10,25 @@ class Event extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'date',
         'from_time',
         'to_time',
         'location',
-        'shrt_description',
+        'short_description',
         'content',
         'cover_image',
         'attendees',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(UserEvent::class);
     }
 }

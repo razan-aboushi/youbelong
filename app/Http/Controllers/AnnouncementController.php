@@ -65,18 +65,7 @@ class AnnouncementController extends Controller
         $validated['user_id'] = auth()->user()->id;
 
         Announcement::create($validated);
-        return redirect()->route('announcements.index')->with('message', 'The Announcement has been created successfully!');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        abort(404);
+        return redirect()->route('announcements.index')->with('message', 'The announcement has been created successfully!');
     }
 
     /**
@@ -88,6 +77,8 @@ class AnnouncementController extends Controller
     public function edit($id)
     {
         $announcement = Announcement::findOrFail($id);
+
+        abort_if($announcement->user_id != auth()->user()->id, 403);
 
         return view('users.announcements.edit', compact('announcement'));
     }
@@ -125,7 +116,7 @@ class AnnouncementController extends Controller
         $announcement->content = $validated['content'];
         $announcement->status = $validated['status'];
         $announcement->save();
-        return redirect()->route('announcements.index')->with('message', 'The Announcement has been updated successfully!');
+        return redirect()->route('announcements.index')->with('message', 'The announcement has been updated successfully!');
     }
 
     /**
@@ -139,6 +130,6 @@ class AnnouncementController extends Controller
         $announcement = Announcement::findOrFail($id);
         $announcement->delete();
 
-        return redirect()->route('announcements.index')->with('message', 'The Announcement has been deleted successfully!');
+        return redirect()->route('announcements.index')->with('message', 'The announcement has been deleted successfully!');
     }
 }

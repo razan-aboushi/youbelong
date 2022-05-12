@@ -39,17 +39,6 @@ class PaymentAccountController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PaymentAccount  $PaymentAccount
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PaymentAccount $PaymentAccount)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\PaymentAccount  $PaymentAccount

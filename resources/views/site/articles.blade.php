@@ -35,7 +35,7 @@
                                     <h4><a href="{{ route('articles', $item->id) }}">{{ $item->title }}</a></h4>
                                     <div class="blog--post--meta mb-20">
                                         <ul>
-                                            <li><span><i class="flaticon-calendar"></i>{{ $item->created_at->diffForHumans() }}</span></li>
+                                            <li><span><i class="flaticon-wall-clock"></i>{{ $item->created_at->diffForHumans() }}</span></li>
                                         </ul>
                                     </div>
                                     <p>{{ $item->short_description }}</p>

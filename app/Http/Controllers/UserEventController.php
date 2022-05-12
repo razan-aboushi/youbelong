@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\UserEvent;
-use Illuminate\Http\Request;
 
 class UserEventController extends Controller
 {
@@ -12,64 +12,16 @@ class UserEventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($event_id)
     {
-        //
-    }
+        $reservations = UserEvent::whereHas('event', function ($e) {
+            $e->where('user_id', auth()->user()->id);
+        })->where('event_id', $event_id)
+            ->with('user')
+            ->latest()
+            ->simplePaginate();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\UserEvent  $userEvent
-     * @return \Illuminate\Http\Response
-     */
-    public function show(UserEvent $userEvent)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\UserEvent  $userEvent
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserEvent $userEvent)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserEvent  $userEvent
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, UserEvent $userEvent)
-    {
-        //
+        return view('users.events.reservations', compact('reservations'));
     }
 
     /**
@@ -78,8 +30,30 @@ class UserEventController extends Controller
      * @param  \App\Models\UserEvent  $userEvent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserEvent $userEvent)
+    public function destroy($id)
     {
-        //
+        $event = UserEvent::findOrFail($id);
+        $event->delete();
+
+        return redirect()->back()->with('message', 'The reservation has been deleted successfully!');
+    }
+
+    public function reserveEventSeat($event_id)
+    {
+        $event = Event::findOrFail($event_id);
+
+        $user_event = UserEvent::where('user_id', auth()->user()->id)->where('event_id', $event_id)->first();
+        if ($user_event) {
+            $user_event->delete();
+
+            return back()->with('message', 'Reservation is canceled!');
+        } else {
+            UserEvent::create([
+                'user_id' => auth()->user()->id,
+                'event_id' => $event_id,
+            ]);
+
+            return back()->with('message', 'Reserved successfully!');
+        }
     }
 }

@@ -293,6 +293,10 @@ label.col-md-4.col-form-label {
     z-index: -1;
 }
 
+.btn.btn-danger::before {
+    background: #c82333;
+}
+
 .btn:hover::before {
     -webkit-transform-origin: left top;
     -ms-transform-origin: left top;
@@ -470,6 +474,9 @@ label.col-md-4.col-form-label {
     background: #40e0d0;
 }
 
+.btn.btn-danger {
+    background: #dc3545
+}
 
 /* 2. Header */
 .custom-container {
@@ -1315,7 +1322,7 @@ label.col-md-4.col-form-label {
 }
 
 .breadcrumb-content .title {
-    font-size: 72px;
+    font-size: 50px;
     letter-spacing: -3px;
     line-height: .8;
     margin-bottom: 21px;

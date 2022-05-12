@@ -7,7 +7,9 @@ use App\Models\Announcement;
 use App\Models\Article;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
+use App\Models\Event;
 use App\Models\User;
+use App\Models\UserEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -115,11 +117,18 @@ class SiteController extends Controller
 
     public function careHomeEvents($id = null)
     {
+        $events = Event::with(['user'])->whereDate('date', '>=', now());
+
         if (!empty($id)) {
-            return view('site.carehome-event-details');
+            $event = $events->withCount('users')->findOrFail($id);
+            $check_reservation = UserEvent::where('user_id', auth()->user()?->id)->where('event_id', $id)->first();
+
+            return view('site.carehome-event-details', compact('event', 'check_reservation'));
         }
 
-        return view('site.carehome-events');
+        $events = $events->latest()->simplePaginate();
+
+        return view('site.carehome-events', compact('events'));
     }
 
     public function utm($id)

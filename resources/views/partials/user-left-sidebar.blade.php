@@ -53,7 +53,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('events.index') }}">
                 <i class="fa fa-fw  fa-calendar"></i>
                 <span>Events</span>
             </a>
