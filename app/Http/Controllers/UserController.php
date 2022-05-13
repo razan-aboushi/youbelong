@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\User;
+use App\Models\UserEvent;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,9 @@ class UserController extends Controller
 
             return view('users.admin-dashboard', compact('number_of_users', 'number_of_articles', 'number_of_contact_us'));
         } else {
-            return view('users.user-dashboard');
+            $evnt_subscriptions = UserEvent::where('user_id', auth()->user()->id)->with(['event'])->latest()->get();
+
+            return view('users.user-dashboard', compact('evnt_subscriptions'));
         }
     }
 

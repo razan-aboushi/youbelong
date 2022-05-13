@@ -117,7 +117,7 @@ class SiteController extends Controller
 
     public function careHomeEvents($id = null)
     {
-        $events = Event::with(['user'])->whereDate('date', '>=', now());
+        $events = Event::with(['user']);
 
         if (!empty($id)) {
             $event = $events->withCount('users')->findOrFail($id);

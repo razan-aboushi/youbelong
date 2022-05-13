@@ -40,13 +40,15 @@
                             </div>
                             {!!  $event->content !!}
 
-                            @if ($event->users_count >= $event->attendees)
-                                <a class="btn btm-sm mt-3 disabled" href="#">Event is full</a>
-                            @else 
-                                @if (!$check_reservation)
-                                    <a class="btn btm-sm mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Join</a>
-                                @else 
+                            @if (now() <= $event->date)
+                                @if ($event->users_count >= $event->attendees)
+                                    <a class="btn btm-sm mt-3 disabled" href="#">Event is full</a>
+                                @endif 
+
+                                @if ($check_reservation)
                                     <a class="btn btm-sm btn-danger mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Cancel Reservation</a>
+                                @elseif ($event->users_count < $event->attendees)
+                                    <a class="btn btm-sm mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Join</a>
                                 @endif
                             @endif 
                         </div>
@@ -89,7 +91,6 @@
                 </div>
             </div>
         </div>
-        
     </main>
 
 @endsection

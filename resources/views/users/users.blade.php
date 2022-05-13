@@ -1,5 +1,6 @@
 @extends('layouts.user')
 @section('content')
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div class="float-left">
@@ -118,4 +119,5 @@
             {{ $users->render() }}
         </div>
     </div>
+    
 @endsection
