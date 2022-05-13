@@ -4,7 +4,12 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div class="float-left">
-                <h6 class="m-0 font-weight-bold text-primary mt-2">Donations</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Donations</h6>
+            </div>
+            <div class="float-right">
+                <a class="btn btn-warning btn-sm @if (count($donations) == '0') disabled @endif" href="{{ route('donations.export') }}{{ ($request ? "?". http_build_query($request->query()) : '') }}">
+                    Export
+                </a>
             </div>
         </div>
         <div class="card-body">
@@ -52,20 +57,20 @@
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
+                            <th>Carehome</th>
                             <th>Payment Method</th>
                             <th>Amount</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
+                            <th>Carehome</th>
                             <th>Payment Method</th>
                             <th>Amount</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -73,10 +78,11 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $donate->user->name }}</td>
+                                <td>{{ $donate->paymentAccount->user->name }}</td>
                                 <td>{{ $donate->paymentAccount->paymentMethod->name }}</td>
-                                <td>{{ $donate->amount }}</td>
+                                <td>{{ $donate->amount . " JOD"}}</td>
                                 <td>
-                                    @if ($donate->status == 0)
+                                    @if ($donate->status == '0')
                                         Pending
                                     @elseif ($donate->status == '1')
                                         Approved
@@ -84,7 +90,6 @@
                                         Rejected
                                     @endif
                                </td>
-                                <td></td>
                             </tr>
                         @empty
                             <tr>

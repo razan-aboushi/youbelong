@@ -29,6 +29,6 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('is-admin', [UserPolicy::class, 'is_admin']);
         Gate::define('is-carehome', [UserPolicy::class, 'is_carehome']);
         Gate::define('is-approved', [UserPolicy::class, 'is_approved']);
-        Gate::define('access-contacts-list', [UserPolicy::class, 'access_contacts_list']);
+        Gate::define('access-admin-carehome', [UserPolicy::class, 'access_contacts_list']);
     }
 }

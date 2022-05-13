@@ -3,13 +3,13 @@
 
     <main>
         <section class="breadcrumb-area">
-            @php $profile = $careHome->profile ?  asset('storage/profiles/'.$careHome->profile) : asset('img/default-thumb.jpg');   @endphp
+            @php $profile = $care_home->profile ?  asset('storage/profiles/'.$care_home->profile) : asset('img/default-thumb.jpg');   @endphp
             <div class="breadcrumb-bg" data-background="{{ $profile }}"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb-content">
-                            <h2 class="title">{{ $careHome->name }}</h2>
+                            <h2 class="title">{{ $care_home->name }}</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
@@ -27,11 +27,11 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="portfolio-details-content">
-                            {!!  $careHome->userCarehome?->bio !!}
+                            {!!  $care_home->userCarehome?->bio !!}
                         </div>
                       
                         <div class="contact-form-wrap p-5">
-                            <form action="{{ route('store-carehome-contact', $careHome->id) }}" method="post">
+                            <form action="{{ route('store-carehome-contact', $care_home->id) }}" method="post">
                                 @csrf
     
                                 @if (\Session::has('success'))
@@ -99,6 +99,7 @@
                             </form>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-7">
                         <aside class="portfolio-sidebar">
                             <div class="widget mb-40">
@@ -108,35 +109,57 @@
                                 <div class="portfolio-widget-cat">
                                     <div class="mb-3">
                                         <h6>Email:</h6>
-                                        <p class="small">{{ $careHome->email }}</p>
+                                        <p class="small">{{ $care_home->email }}</p>
                                     </div>
 
                                     <div class="mb-3">
                                         <h6>Phone:</h6>
-                                        <p class="small">{{ $careHome->phone }}</p>
+                                        <p class="small">{{ $care_home->phone }}</p>
                                     </div>
 
                                     <div class="mb-3">
                                         <h6>Location:</h6>
-                                        <p class="small">{{ $careHome->address }}</p>
+                                        <p class="small">{{ $care_home->address }}</p>
                                     </div>
 
-                                    @if ($careHome->userCarehome?->elderlies_number)
+                                    @if ($care_home->userCarehome?->elderlies_number)
                                         <div class="mb-3">
                                             <h6>Elderlies Number:</h6>
-                                            <p class="small">{{ \App\Models\UserCarehome::$elderlies_range[$careHome->userCarehome?->elderlies_number] }}</p>
+                                            <p class="small">{{ \App\Models\UserCarehome::$elderlies_range[$care_home->userCarehome?->elderlies_number] }}</p>
                                         </div>
                                     @endif
 
-                                        @if ($careHome->userCarehome?->establishment_date)
+                                        @if ($care_home->userCarehome?->establishment_date)
                                         <div class="mb-3">
                                             <h6>Establishment Date:</h6>
-                                            <p class="small">{{ $careHome->userCarehome?->establishment_date }}</p>
+                                            <p class="small">{{ $care_home->userCarehome?->establishment_date }}</p>
                                         </div>
                                     @endif
                                 </div>
                             </div>
                         </aside>
+
+                        @if (!$payment_methods->isEmpty())
+                            <aside class="portfolio-sidebar">
+                                <div class="widget mb-40">
+                                    <div class="portfolio-widget-title mb-30">
+                                        <h4>Donate</h4>
+                                    </div>
+
+                                    <ul class="payment-methods">
+                                        @foreach ($payment_methods as $payment)
+                                            <li>
+                                                <a class="text-white" href="{{ route('donate', $payment->id) }}">
+                                                    @php $payment_logo = $payment->paymentMethod->logo ?  asset('storage/uploads/'.$payment->paymentMethod->logo) : asset('img/default-thumb.jpg');   @endphp
+                                                    <span class="payment-logo" style="background-image: url({{$payment_logo}})"></span>
+                                                    <span class="pt-2">{{ $payment->paymentMethod->name }}</span>
+                                                </a>
+                                            </li> 
+                                        @endforeach
+                                    </ul>
+                                </div>  
+                            </aside>
+                        @endif
                     </div>
                 </div>
             </div>

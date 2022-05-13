@@ -8,6 +8,7 @@ use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\User;
 use App\Models\UserEvent;
+use App\Models\UserTransaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,9 @@ class UserController extends Controller
         } else {
             $evnt_subscriptions = UserEvent::where('user_id', auth()->user()->id)->with(['event'])->latest()->get();
 
-            return view('users.user-dashboard', compact('evnt_subscriptions'));
+            $user_transactions = UserTransaction::where('user_id', auth()->user()->id)->with(['paymentAccount.user', 'paymentAccount.paymentMethod'])->latest()->get();
+
+            return view('users.user-dashboard', compact('evnt_subscriptions', 'user_transactions'));
         }
     }
 

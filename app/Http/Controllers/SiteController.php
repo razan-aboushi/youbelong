@@ -8,6 +8,7 @@ use App\Models\Article;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
 use App\Models\Event;
+use App\Models\PaymentAccount;
 use App\Models\User;
 use App\Models\UserEvent;
 use Illuminate\Http\Request;
@@ -68,19 +69,27 @@ class SiteController extends Controller
 
     public function careHomes($id = null)
     {
-        $careHomes = User::whereHas('role', function ($r) {
+        $care_homes = User::whereHas('role', function ($r) {
             $r->where('name', 'carehome');
         })->where('approved', '1')->with('userCarehome');
 
         if (!empty($id)) {
-            $careHome = $careHomes->findOrFail($id);
+            $care_home = $care_homes->findOrFail($id);
 
-            return view('site.carehome-details', compact('careHome'));
+            $payment_methods = PaymentAccount::where('user_id', $id)
+                ->whereHas('paymentMethod', function ($m) {
+                    $m->where('status', '1');
+                })
+                ->where('status', '1')
+                ->with(['paymentMethod'])
+                ->get();
+
+            return view('site.carehome-details', compact('care_home', 'payment_methods'));
         }
 
-        $careHomes = $careHomes->latest()->simplePaginate();
+        $care_homes = $care_homes->latest()->simplePaginate();
 
-        return view('site.carehomes', compact('careHomes'));
+        return view('site.carehomes', compact('care_homes'));
     }
 
     public function storeCarehomeContactUs(Request $request, $id)

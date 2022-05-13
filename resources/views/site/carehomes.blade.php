@@ -24,7 +24,7 @@
         <section class="blog-area pt-120 pb-120">
             <div class="container">
                 <div class="row justify-content-center">
-                    @forelse ($careHomes as $item)
+                    @forelse ($care_homes as $item)
                         <div class="col-lg-6">
                             <div class="blog--post--item mb-40">
                                 @php $profile = $item->profile ?  asset('storage/profiles/'.$item->profile) : asset('img/default-thumb.jpg');   @endphp
@@ -51,7 +51,7 @@
 
                 <div class="row justify-content-center text-center">
                     <div class="col-lg-6">
-                        {{ $careHomes->render() }}
+                        {{ $care_homes->render() }}
                     </div>
                 </div>
             </div>
