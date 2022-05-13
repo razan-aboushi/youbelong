@@ -51,6 +51,9 @@
                                     <a class="btn btm-sm mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Join</a>
                                 @endif
                             @endif 
+
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-627e7e0c9650450e"></script>
+                            <div class="addthis_inline_share_toolbox mt-5"></div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-7">
