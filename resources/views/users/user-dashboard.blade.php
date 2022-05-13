@@ -4,7 +4,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div class="float-left">
-                <h6 class="m-0 font-weight-bold text-primary">Events</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Subscribed Events</h6>
             </div>
         </div>
         <div class="card-body">
@@ -13,7 +13,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Event name</th>
+                            <th>Event Name</th>
                             <th>Date</th>
                             <th>Reg. Date</th>
                             <th>Action</th>
@@ -22,7 +22,7 @@
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Event name</th>
+                            <th>Event Name</th>
                             <th>Date</th>
                             <th>Reg. Date</th>
                             <th>Action</th>

@@ -140,6 +140,9 @@ class EventController extends Controller
     public function destroy($id)
     {
         $event = Event::findOrFail($id);
+
+        abort_if($event->user_id != auth()->user()->id, 403);
+
         $event->delete();
 
         return redirect()->route('events.index')->with('message', 'The event has been deleted successfully!');

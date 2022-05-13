@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('payment_accounts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('payment_gateway_id')->constrained('payment_methods')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('payment_method_id')->constrained('payment_methods')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('account_number');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();

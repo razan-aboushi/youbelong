@@ -128,6 +128,9 @@ class AnnouncementController extends Controller
     public function destroy($id)
     {
         $announcement = Announcement::findOrFail($id);
+
+        abort_if($announcement->user_id != auth()->user()->id, 403);
+
         $announcement->delete();
 
         return redirect()->route('announcements.index')->with('message', 'The announcement has been deleted successfully!');

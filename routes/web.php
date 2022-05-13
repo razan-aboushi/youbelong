@@ -36,7 +36,7 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
     Route::get('/profile-information', [App\Http\Controllers\UserController::class, 'profileInformation'])->name('profile-information');
     Route::put('/profile-information', [App\Http\Controllers\UserController::class, 'storeProfileInformation'])->name('update-profile-information');
 
-    Route::get('/event-seat/{event_id}', [App\Http\Controllers\UserEventController::class, 'reserveEventSeat'])->name('reserve-event-seat');
+    Route::get('/event-seat/{evNameent_id}', [App\Http\Controllers\UserEventController::class, 'reserveEventSeat'])->name('reserve-event-seat');
 
     Route::middleware('can:access-contacts-list')->group(function () {
         Route::get('/contact-request-lists', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');

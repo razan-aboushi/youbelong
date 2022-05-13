@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="row mb-3">
-                    <label for="logo" class="col-md-4 col-form-label text-md-end">{{ __('logo') }}</label>
+                    <label for="logo" class="col-md-4 col-form-label text-md-end">{{ __('Logo') }}</label>
                     <div class="col-md-6">
                         <input id="logo" type="file" class="form-control-file @error('logo') is-invalid @enderror" name="logo">
                         <span class="small text-muted">Allowed file types are: jpg,jpeg,bmp,png,gif</span>
