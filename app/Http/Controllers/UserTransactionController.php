@@ -12,63 +12,24 @@ class UserTransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-    }
+        $donations = UserTransaction::whereHas('paymentAccount', function ($p) {
+            $p->where('user_id', auth()->user()->id);
+        });
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        if ($request->has('name') && !is_null($request->name)) {
+            $donations->whereHas('user', function ($u) use ($request) {
+                $u->where('name', 'like', '%' . $request->name . '%');
+            });
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        if ($request->has('status') && !is_null($request->status)) {
+            $donations->where('status', $request->status);
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\UserTransaction  $userTransaction
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserTransaction $userTransaction)
-    {
-        //
-    }
+        $donations = $donations->with(['user', 'paymentAccount'])->latest()->simplePaginate();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\UserTransaction  $userTransaction
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, UserTransaction $userTransaction)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\UserTransaction  $userTransaction
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(UserTransaction $userTransaction)
-    {
-        //
+        return view('users.donations.index', compact('donations', 'request'));
     }
 }

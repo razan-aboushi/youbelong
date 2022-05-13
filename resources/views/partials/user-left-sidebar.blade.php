@@ -33,6 +33,13 @@
                 <span>Advertisements</span>
             </a>
         </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('payment-methods.index') }}">
+                <i class="fas fa-fw fa-credit-card"></i>
+                <span>Payment Methods</span>
+            </a>
+        </li>
     @endcan
 
     @can('access-contacts-list')
@@ -60,8 +67,15 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('payment-accounts.index') }}">
                 <i class="fas fa-fw fa-credit-card"></i>
+                <span>Payment Accounts</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('donations') }}">
+                <i class="fa fa-fw fa-box-usd"></i>
                 <span>Donation</span>
             </a>
         </li>

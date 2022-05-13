@@ -38,7 +38,6 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
 
     Route::get('/event-seat/{event_id}', [App\Http\Controllers\UserEventController::class, 'reserveEventSeat'])->name('reserve-event-seat');
 
-
     Route::middleware('can:access-contacts-list')->group(function () {
         Route::get('/contact-request-lists', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
     });
@@ -48,6 +47,8 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
         Route::resource('events', App\Http\Controllers\EventController::class);
         Route::get('user-events/{event_id}', [App\Http\Controllers\UserEventController::class, 'index'])->name('user-events');
         Route::delete('delete/user-events/{event_id}', [App\Http\Controllers\UserEventController::class, 'destroy'])->name('delete-user-events');
+        Route::get('donations', [App\Http\Controllers\UserTransactionController::class, 'index'])->name('donations');
+        Route::resource('payment-accounts', App\Http\Controllers\PaymentAccountController::class);
     });
 
     Route::middleware('admin')->group(function () {
@@ -57,5 +58,6 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
         Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');
         Route::resource('articles', App\Http\Controllers\ArticleController::class);
         Route::resource('advertisements', App\Http\Controllers\AdvertisementController::class);
+        Route::resource('payment-methods', App\Http\Controllers\PaymentMethodController::class);
     });
 });
