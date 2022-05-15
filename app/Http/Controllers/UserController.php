@@ -111,11 +111,13 @@ class UserController extends Controller
         $rules = [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . auth()->user()->id],
-            'phone' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'numeric', 'digits_between:10,14'],
             'address' => ['required', 'string', 'max:255'],
-            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
+            'password' => ['nullable', 'string', 'min:8'],
             'avatar' => ['nullable', 'mimes:jpg,jpeg,bmp,png,gif'],
         ];
+
+
 
         if ($role == 'individual') {
             $rules += [

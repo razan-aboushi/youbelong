@@ -117,8 +117,8 @@
     </section>
 
     <section class="skill-area theme-bg pt-120 pb-120">
-        <div class="skill-overlay-img" data-background="img/images/skill_overlay_img.jpg">
-            <a href="https://www.youtube.com/watch?v=YPF_KMixLNE" class="popup-video"><i class="fas fa-play"></i></a>
+        <div class="skill-overlay-img" data-background="img\RR.mp4">
+            <a href="img\RR.mp4" class="popup-video"><i class="fas fa-play"></i></a>
         </div>
         <div class="container">
             <div class="row justify-content-end">
@@ -204,7 +204,7 @@
                             <div class="fact-icon">
                                 <i class="flaticon-user"></i>
                             </div>
-                            <h2><span class="odometer" data-count="20">00</span></h2>
+                            <h2><span class="odometer" data-count="62">00</span></h2>
                         </div>
                         <div class="fact-content">
                             <h4>The number Of current users on the web site</h4>
@@ -307,9 +307,9 @@
                                 <div class="testi-quote-icon">
                                     <i class="flaticon-quotation"></i>
                                 </div>
-                                <h2>Life without them is meaningless, they are the flower of existence</h2>
+                                <h2>In their presence there is blessing and happiness, and in their separation there is sadness</h2>
                                 <div class="testi-avatar-info">
-                                   
+                                    
                                     <h4>Razan Aboushi</h4>
                                 </div>
                             </div>
@@ -322,9 +322,9 @@
                                 <div class="testi-quote-icon">
                                     <i class="flaticon-quotation"></i>
                                 </div>
-                                <h2>In their presence there is blessing and happiness, and in their separation there is sadness</h2>
+                                <h2>Life without them is meaningless, they are the flower of existence</h2>
                                 <div class="testi-avatar-info">
-                                    <h4>Razan Aboushi </h4>
+                                    <h4>Dr.Rand Aldmour</h4>
                                 </div>
                             </div>
                         </div>
@@ -334,7 +334,7 @@
                     <div class="testi-avatar-active">
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="{{ asset('img/images/testi_avatar01.jpg') }}" alt="">
+                                <img src="{{ asset('img/images/Sara.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                
@@ -343,7 +343,7 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="{{ asset('img/images/testi_avatar02.jpg') }}" alt="">
+                                <img src="{{ asset('img/images/Zaid.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 
@@ -352,7 +352,7 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="{{ asset('img/images/testi_avatar03.jpg') }}" alt="">
+                                <img src="{{ asset('img/images/Razan.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 
@@ -361,11 +361,11 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="{{ asset('img/images/testi_avatar03.jpg') }}" alt="">
+                                <img src="{{ asset('img/images/rand.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 
-                                <h4>Razan Aboushi</h4>
+                                <h4>Dr.Rand Aldmour</h4>
                             </div>
                         </div>
                     </div>
