@@ -42,7 +42,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input type="text" name="name" placeholder="Enter full name" class="@error('name') is-invalid @enderror" value="{{ old('name') }}">
+                                        <input type="text" name="name" placeholder="Enter full name" class="@error('name') is-invalid @enderror" value="{{ old('name') ?? auth()?->user()?->name }}">
                                         @error('name')
                                             <div class="small invalid">{{ $message }}</div>
                                         @enderror
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input type="email" name="email" placeholder="Enter your email" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                        <input type="email" name="email" placeholder="Enter your email" class="@error('email') is-invalid @enderror" value="{{ old('email') ?? auth()?->user()?->email  }}">
                                         @error('email')
                                             <div class="small invalid">{{ $message }}</div>
                                         @enderror
@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-grp">
-                                        <input type="text" name="phone" placeholder="Phone Number" class="@error('phone') is-invalid @enderror" value="{{ old('phone') }}">
+                                        <input type="text" name="phone" placeholder="Phone Number" class="@error('phone') is-invalid @enderror" value="{{ old('phone') ?? auth()?->user()?->phone  }}">
                                         @error('phone')
                                             <div class="small invalid">{{ $message }}</div>
                                         @enderror

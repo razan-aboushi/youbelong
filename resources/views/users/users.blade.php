@@ -6,11 +6,6 @@
             <div class="float-left">
                 <h6 class="m-0 font-weight-bold text-primary">Users</h6>
             </div>
-            <div class="float-right">
-                <a class="btn btn-warning btn-sm @if (count($users) == '0') disabled @endif" href="{{ route('users.export') }}{{ ($request ? "?". http_build_query($request->query()) : '') }}">
-                    Export
-                </a>
-            </div>
         </div>
         <div class="card-body">
             <div class="card-filter mb-3">
@@ -42,6 +37,27 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">From</span>
+                                </div>
+                                <input type="date" class="form-control" name="from_date" value="{{ $request->from_date }}" placeholder="From Date Filter" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">To</span>
+                                </div>
+                                <input type="date" class="form-control" name="to_date" value="{{ $request->to_date }}" placeholder="From Date Filter" />
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-3">
                             <input type="submit" value="Filter" class="btn btn-success" />
@@ -60,14 +76,14 @@
             @endif
 
             <div class="table-responsive">
-                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered table-hover datatable-export" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>ِAddress</th>
+                            <th>Address</th>
                             <th>Type</th>
                             <th>Status</th>
                             <th>Reg. Date</th>
@@ -80,7 +96,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>ِAddress</th>
+                            <th>Address</th>
                             <th>Type</th>
                             <th>Status</th>
                             <th>Reg. Date</th>
@@ -116,7 +132,6 @@
                     </tbody>
                 </table>
             </div>
-            {{ $users->render() }}
         </div>
     </div>
     

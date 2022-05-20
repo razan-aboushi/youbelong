@@ -22,6 +22,8 @@ class UserCarehome extends Model
         'establishment_date',
         'bio',
         'short_description',
+        'city',
+        'street',
     ];
 
     public function user()

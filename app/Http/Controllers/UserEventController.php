@@ -19,7 +19,7 @@ class UserEventController extends Controller
         })->where('event_id', $event_id)
             ->with('user')
             ->latest()
-            ->simplePaginate();
+            ->get();
 
         return view('users.events.reservations', compact('reservations'));
     }

@@ -8,12 +8,12 @@
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
                                     <li><a href="{{ route('home') }}">Home</a></li>
-                                    <li><a href="{{ route('about-us') }}">About</a></li>
-                                    <li><a href="{{ route('contact-us') }}">Contacts</a></li>
+                                    <li><a href="{{ route('about-us') }}">About Us</a></li>
+                                    <li><a href="{{ route('contact-us') }}">Contacts Us</a></li>
                                     <li class="dropdown"><a href="#">Care Home</a>
                                         <ul class="submenu">
                                             <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
-                                            <li><a href="{{ route('announcements') }}">Announcements</a></li>
+                                            <li><a href="{{ route('announcements') }}">Carehome Needs</a></li>
                                             <li><a href="{{ route('events') }}">Events</a></li>
                                         </ul>
                                     </li>
@@ -25,7 +25,8 @@
                                 <div class="header-top-action d-none d-md-block">
                                     <ul>
                                         @auth
-                                            <li class="header-login"><a href="{{ route('dashboard') }}">Profile</a></li>
+                                            <li class="header-login"><a class="text-secondary" href="#">Hello, {{ auth()->user()->name }}</a></li>
+                                            <li class="header-login"><a href="{{ route('dashboard') }}">My Dashboard</a></li>
                                             <li class="header-login">
                                                 <a href="#" onclick="$('#logout').submit();">Logout</a>
                                                 <form id="logout" method="POST" action="{{ route('logout') }}">

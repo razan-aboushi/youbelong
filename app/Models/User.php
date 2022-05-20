@@ -27,6 +27,21 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public static $jordan_cities = [
+        'Irbid',
+        'Ajloun',
+        'Jerash',
+        'Mafraq',
+        'Balqa',
+        'Amman',
+        'Zarqa',
+        'Madaba',
+        'Karak',
+        'Tafilah',
+        'Maaan',
+        'Aqaba',
+    ];
+
     public function role()
     {
         return $this->belongsTo(Role::class);

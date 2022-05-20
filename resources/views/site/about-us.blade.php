@@ -2,7 +2,6 @@
 @section('content')
 
     <main>
-        <!-- breadcrumb-area -->
         <section class="breadcrumb-area">
             <div class="breadcrumb-bg" data-background="{{ asset('img/bg/about_breadcrumb_bg.jpg') }}"></div>
             <div class="container">
@@ -21,9 +20,7 @@
                 </div>
             </div>
         </section>
-        <!-- breadcrumb-area-end -->
-
-        <!-- about-us-area -->
+ 
         <section class="about-us-area about-style-four pt-120 pb-120">
             <div class="container">
                 <div class="row align-items-center justify-content-center pb-30">
@@ -70,7 +67,6 @@
                     </div>
                 </div>
         </section>
-        <!-- about-us-area-end -->
 
     </main>
 

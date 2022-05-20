@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{{ asset("css/fontawesome-all.min.css") }}">
         <link rel="stylesheet" href="{{ asset("plugins/summernote/summernote-bs4.css") }}">
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}" >
-
+        <link rel="stylesheet" href="{{ asset('css/datatables.css') }}" >
     </head>
     <body>
         <main id="wrapper">
@@ -31,5 +31,29 @@
         <script src="{{ asset("js/admin.js") }}"></script>
         <script src="{{ asset("plugins/summernote/summernote-bs4.js") }}"></script>
         <script src="{{ asset("js/jquery.easing.js") }}"></script>
+        <script src="{{ asset("plugins/datatable/pdfmake.js") }}"></script>
+        <script src="{{ asset("plugins/datatable/vfs_fonts.js") }}"></script>
+        <script src="{{ asset("plugins/datatable/datatables.js") }}"></script>
+        <script>
+            $(document).ready(function() {
+                $('.datatable-export').DataTable( {
+                    searching: false,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copyHtml5',
+                        'excelHtml5',
+                        'csvHtml5',
+                        'pdfHtml5'
+                    ]
+                });
+            });
+
+            $(document).ready(function() {
+                $('.datatable').DataTable( {
+                    searching: false,
+                });
+            });
+        </script>
+
     </body>
 </html>

@@ -38,6 +38,9 @@
                                             <li><span><i class="flaticon-wall-clock"></i>{{ $item->created_at->diffForHumans() }}</span></li>
                                             <li><span><i class="flaticon-heart-3"></i>{{ $item->user?->name }}</span></li>
                                             <li><span><i class="flaticon-calendar"></i>{{ $item->date }}</span></li>
+                                            <li><span><i class="flaticon-message"></i>
+                                                <a  href="{{ route('care-homes', $item->user->id) }}"><u>Contact the carehome</u></a>    
+                                            </span></li>
                                         </ul>
                                     </div>
                                     <p>{{ $item->short_description }}</p>

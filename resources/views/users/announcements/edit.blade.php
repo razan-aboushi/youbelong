@@ -3,7 +3,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit an announcement</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit a carehome needs</h6>
         </div>
         <div class="card-body">
             <form name="edit-announcement" method="post" action="{{ route('announcements.update', $announcement->id) }}" enctype="multipart/form-data">

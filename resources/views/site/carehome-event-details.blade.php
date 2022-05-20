@@ -40,20 +40,25 @@
                             </div>
                             {!!  $event->content !!}
 
-                            @if (now() <= $event->date)
-                                @if ($event->users_count >= $event->attendees)
-                                    <a class="btn btm-sm mt-3 disabled" href="#">Event is full</a>
-                                @endif 
+                            @if (!in_array(auth()->user()?->role?->name, ['admin', 'carehome']))
+                                @if (now() <= $event->date)
+                                    @if ($event->users_count >= $event->attendees)
+                                        <a class="btn btm-sm mt-3 disabled" href="#">Event is full</a>
+                                    @endif 
 
-                                @if ($check_reservation)
-                                    <a class="btn btm-sm btn-danger mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Cancel Reservation</a>
-                                @elseif ($event->users_count < $event->attendees)
-                                    <a class="btn btm-sm mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Join</a>
-                                @endif
-                            @endif 
+                                    @if ($check_reservation)
+                                        <a class="btn btm-sm btn-danger mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Cancel Reservation</a>
+                                    @elseif ($event->users_count < $event->attendees)
+                                        <a class="btn btm-sm mt-3" href="{{ route('reserve-event-seat', $event->id) }}">Join</a>
+                                    @endif
+                                @endif 
+                            @endif
 
                             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-627e7e0c9650450e"></script>
-                            <div class="addthis_inline_share_toolbox mt-5"></div>
+                            <div class="share-btns mt-5">
+                                <div class="addthis-content font-weight-bold mr-2">Share on</div>
+                                <div class="addthis_inline_share_toolbox"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-7">

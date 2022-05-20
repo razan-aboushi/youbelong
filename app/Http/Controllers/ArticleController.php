@@ -24,7 +24,15 @@ class ArticleController extends Controller
             $articles->where('status', $request->status);
         }
 
-        $articles = $articles->latest()->simplePaginate();
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $articles->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $articles->whereDate('created_at', '<=', $request->to_date);
+        }
+
+        $articles = $articles->latest()->get();
 
         return view('users.articles.index', compact('articles', 'request'));
     }

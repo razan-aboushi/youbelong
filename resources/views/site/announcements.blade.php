@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="breadcrumb-content">
-                            <h4 class="title">Announcements</h4>
+                            <h4 class="title">Carehome Needs</h4>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
@@ -37,6 +37,9 @@
                                         <ul>
                                             <li><span><i class="flaticon-wall-clock"></i>{{ $item->created_at->diffForHumans() }}</span></li>
                                             <li><span><i class="flaticon-heart-3"></i>{{ $item->user?->name }}</span></li>
+                                            <li><span><i class="flaticon-message"></i>
+                                                <a  href="{{ route('care-homes', $item->user->id) }}"><u>Contact the carehome</u></a>    
+                                            </span></li>
                                         </ul>
                                     </div>
                                     <p>{{ $item->short_description }}</p>

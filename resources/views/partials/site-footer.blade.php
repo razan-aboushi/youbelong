@@ -40,9 +40,9 @@
                         </div>
                         <div class="footer-social">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/You-Belong-104381952251376"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/razanalqadoumi?t=i30qIsCocFsUXXBQWrKLGg&s=09"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/accounts/login/?next=/youbelong3/"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -55,10 +55,10 @@
                         <div class="fw-link">
                             <ul>
                                 <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{ route('about-us') }}">About</a></li>
-                                <li><a href="{{ route('contact-us') }}">Contacts</a></li>
+                                <li><a href="{{ route('about-us') }}">About Us</a></li>
+                                <li><a href="{{ route('contact-us') }}">Contacts Us</a></li>
                                 <li><a href="{{ route('care-homes') }}">Care Homes</a></li>
-                                <li><a href="{{ route('announcements') }}">Care Home Announcements</a></li>
+                                <li><a href="{{ route('announcements') }}">Carehome Needs</a></li>
                                 <li><a href="{{ route('events') }}">Care Home Events</a></li>
                                 <li><a href="{{ route('articles') }}">Articls</a></li>
                                 <li><a href="{{ route('privacy-policy') }}">privacy policy</a></li>

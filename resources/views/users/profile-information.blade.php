@@ -54,6 +54,24 @@
                     </div>
                 </div>
 
+                <div class="row mb-3">
+                    <label for="address" class="col-md-4 col-form-label text-md-end">
+                        @if ($user->role->name == 'carehome')
+                            {{ __('Country') }}
+                        @else 
+                            {{ __('Address') }}
+                        @endif
+                    </label>
+                    <div class="col-md-6">
+                        <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') ?? $user->address }}" >
+                        @error('address')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+
                 @if ($user->role->name == 'individual')
                     <div class="row mb-3">
                         <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
@@ -112,6 +130,30 @@
                 @endif
 
                 @if ($user->role->name == 'carehome')
+                    <div class="row mb-3">
+                        <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
+                        <div class="col-md-6">
+                            <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') ?? $user->userCarehome?->city }}" >
+                            @error('city')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="street" class="col-md-4 col-form-label text-md-end">{{ __('Street') }}</label>
+                        <div class="col-md-6">
+                            <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') ?? $user->userCarehome?->street }}" >
+                            @error('street')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
                     <div class="row mb-3">
                         <label for="elderlies_number" class="col-md-4 col-form-label text-md-end">{{ __('Number of Elderlies') }}</label>
                         <div class="col-md-6">
@@ -173,18 +215,9 @@
                     </div>
                 @endif
 
-                <div class="row mb-3">
-                    <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
-                    <div class="col-md-6">
-                        <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') ?? $user->address }}" >
-                        @error('address')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div>
 
+      
+              
                 <div class="row mb-3">
                     <label for="profile" class="col-md-4 col-form-label text-md-end">{{ __('Profile Image') }}</label>
                     <div class="col-md-6">

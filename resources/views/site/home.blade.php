@@ -39,7 +39,7 @@
                         <h2 class="title">Drop by drop can generate a river of goodness</h2>
                     </div>
                     <div class="about-us-btn">
-                        <a href="{{ route('about-us') }}" class="btn">Read More <i class="fal fa-angle-down"></i></a>
+                        <a href="{{ route('about-us') }}" class="btn">Read More </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -147,7 +147,7 @@
                             <h6>Psychological comfort for the elderly</h6>
                             <div class="progress">
                                 <div class="progress-bar wow slideInLeft" data-wow-duration="2s" data-wow-delay=".6s" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0"
-                                    aria-valuemax="100"><span>70%</span></div>
+                                    aria-valuemax="100"><span>60%</span></div>
                             </div>
                         </div>
                     </div>
@@ -234,7 +234,8 @@
                         <div class="faq-set">
                             <a class="active" href="#"><i class="fal fa-minus"></i> Is the electronic donation feature available?</a>
                             <div class="content" style="display: block;">
-                                <p>No, but you can donate through any bank branch close to you to an account number for the care home if it has one, or from E-Fawateercom.</p>
+                                <p>Yes, you can donate through the website by clicking on one of the payment methods on the care home page,
+                                     and entering the amount you wish to donate. </p>
                             </div>
                         </div>
                         <div class="faq-set">
@@ -334,7 +335,7 @@
                     <div class="testi-avatar-active">
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="{{ asset('img/images/Sara.jpg') }}" alt="">
+                                <img src="{{ asset('img/images/Sara1.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                
@@ -343,7 +344,7 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="{{ asset('img/images/Zaid.jpg') }}" alt="">
+                                <img src="{{ asset('img/images/Zaid1.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 
@@ -352,7 +353,7 @@
                         </div>
                         <div class="testi-avatar-box">
                             <div class="testi-avatar-thumb">
-                                <img src="{{ asset('img/images/Razan.jpg') }}" alt="">
+                                <img src="{{ asset('img/images/Razan1.jpg') }}" alt="">
                             </div>
                             <div class="testi-avatar-content">
                                 

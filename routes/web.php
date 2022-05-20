@@ -42,8 +42,7 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
 
     Route::middleware('can:access-admin-carehome')->group(function () {
         Route::get('/contact-request-lists', [App\Http\Controllers\UserController::class, 'contactUs'])->name('user-contact-us');
-        Route::get('donations/{export?}', [App\Http\Controllers\UserTransactionController::class, 'index'])->name('donations');
-        Route::get('/export-donations', [App\Http\Controllers\UserTransactionController::class, 'export'])->name('donations.export');
+        Route::get('donations', [App\Http\Controllers\UserTransactionController::class, 'index'])->name('donations');
     });
 
     Route::middleware('can:is-carehome')->group(function () {
@@ -55,8 +54,7 @@ Route::middleware(['auth'])->prefix('/portal/')->group(function () {
     });
 
     Route::middleware('admin')->group(function () {
-        Route::get('/user-lists/{export?}', [App\Http\Controllers\UserController::class, 'users'])->name('users');
-        Route::get('/export-user-lists', [App\Http\Controllers\UserController::class, 'export'])->name('users.export');
+        Route::get('/user-lists', [App\Http\Controllers\UserController::class, 'users'])->name('users');
 
         Route::get('/profile-status/{userId}', [App\Http\Controllers\UserController::class, 'profileStatus'])->name('profile-status');
         Route::resource('articles', App\Http\Controllers\ArticleController::class);

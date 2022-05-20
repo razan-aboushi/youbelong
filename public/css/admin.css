@@ -11329,6 +11329,11 @@ a:focus {
     display: none;
 }
 
+span.invalid-feedback strong {
+    font-weight: 300;
+    font-size: 11px;
+}
+
 .sidebar .nav-item.dropdown .dropdown-toggle::after,
 .topbar .nav-item.dropdown .dropdown-toggle::after {
     width: 1rem;
@@ -11337,8 +11342,8 @@ a:focus {
     vertical-align: 0;
     border: 0;
     font-weight: 900;
-    content: '\f105';
-    font-family: 'Font Awesome 5 Free';
+    content: '\f107';
+    font-family: 'Font Awesome 5 Pro';
 }
 
 .sidebar .nav-item.dropdown.show .dropdown-toggle::after,
@@ -11541,7 +11546,7 @@ a:focus {
 }
 
 .sidebar .nav-item .nav-link span {
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     display: block;
 }
 
@@ -11622,7 +11627,7 @@ a:focus {
 .sidebar #sidebarToggle::after {
     font-weight: 900;
     content: '\f104';
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 5 Pro';
     margin-right: 0.1rem;
 }
 
@@ -11641,7 +11646,7 @@ a:focus {
 
 .sidebar.toggled #sidebarToggle::after {
     content: '\f105';
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 5 Pro';
     margin-left: 0.25rem;
 }
 
@@ -11751,7 +11756,7 @@ a:focus {
     }
 
     .sidebar .nav-item .nav-link span {
-        font-size: 0.85rem;
+        font-size: 1rem;
         display: inline;
     }
 
@@ -11763,7 +11768,7 @@ a:focus {
         border: 0;
         font-weight: 900;
         content: '\f107';
-        font-family: 'Font Awesome 5 Free';
+        font-family: 'Font Awesome 5 Pro';
     }
 
     .sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
@@ -12052,7 +12057,7 @@ a:focus {
     line-height: 51px;
     font-weight: 900;
     content: '\f107';
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 5 Pro';
     color: #d1d3e2;
 }
 

@@ -37,7 +37,10 @@
                                 {!!  $article->content !!}
 
                                 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-627e7e0c9650450e"></script>
-                                <div class="addthis_inline_share_toolbox mt-5"></div>
+                                <div class="share-btns mt-5">
+                                    <div class="addthis-content font-weight-bold mr-2">Share on</div>
+                                    <div class="addthis_inline_share_toolbox"></div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Create a new announcement</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Create a new carehome  needs</h6>
         </div>
         <div class="card-body">
             <form name="create-announcement" method="post" action="{{ route('announcements.store') }}" enctype="multipart/form-data">
@@ -81,7 +81,7 @@
                 <div class="row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-success">
-                            {{ __('Create') }}
+                            {{ __('Add') }}
                         </button>
                     </div>
                 </div>

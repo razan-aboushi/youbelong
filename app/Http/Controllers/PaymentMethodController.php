@@ -24,7 +24,15 @@ class PaymentMethodController extends Controller
             $payment_methods->where('status', $request->status);
         }
 
-        $payment_methods = $payment_methods->latest()->simplePaginate();
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $payment_methods->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $payment_methods->whereDate('created_at', '<=', $request->to_date);
+        }
+
+        $payment_methods = $payment_methods->latest()->get();
 
         return view('users.payment-methods.index', compact('payment_methods', 'request'));
     }

@@ -62,7 +62,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('announcements.index') }}">
                 <i class="fas fa-fw fa-bullhorn"></i>
-                <span>Announcements</span>
+                <span>Carehome Needs</span>
             </a>
         </li>
 

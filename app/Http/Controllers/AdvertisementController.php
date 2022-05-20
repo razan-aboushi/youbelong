@@ -24,7 +24,15 @@ class AdvertisementController extends Controller
             $advertisements->where('status', $request->status);
         }
 
-        $advertisements = $advertisements->latest()->simplePaginate();
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $advertisements->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $advertisements->whereDate('created_at', '<=', $request->to_date);
+        }
+
+        $advertisements = $advertisements->latest()->get();
 
         return view('users.advertisements.index', compact('advertisements', 'request'));
     }

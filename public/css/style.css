@@ -60,6 +60,11 @@ a,
     transition: all 0.3s ease-out 0s;
 }
 
+.share-btns div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 a:focus,
 .btn:focus,
 .button:focus {
@@ -1348,10 +1353,9 @@ ul.payment-methods li+li {
 }
 
 .breadcrumb-content .title {
-    font-size: 50px;
-    letter-spacing: -3px;
-    line-height: .8;
-    margin-bottom: 21px;
+    font-size: 30px;
+    line-height: 1em;
+    margin-bottom: 20px;
 }
 
 .breadcrumb-content .breadcrumb {
@@ -1689,7 +1693,7 @@ ul.payment-methods li+li {
 }
 
 .section-title .title {
-    font-size: 44px;
+    font-size: 40px;
     line-height: 1;
     letter-spacing: -2px;
     margin-bottom: 0;

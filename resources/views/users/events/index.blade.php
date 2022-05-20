@@ -7,7 +7,7 @@
                 <h6 class="m-0 font-weight-bold text-primary mt-2">Events</h6>
             </div>
             <div class="float-right">
-                <a class="btn btn-success btn-sm" href="{{ route('events.create') }}">Create</a>
+                <a class="btn btn-success btn-sm" href="{{ route('events.create') }}">Add</a>
             </div>
         </div>
         <div class="card-body">
@@ -30,6 +30,24 @@
                                 <option value="0" @if ($request->status == '0') selected @endif>Draft</option>
                             </select>
                         </div>
+
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">From</span>
+                                </div>
+                                <input type="date" class="form-control" name="from_date" value="{{ $request->from_date }}" placeholder="From Date Filter" />
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">To</span>
+                                </div>
+                                <input type="date" class="form-control" name="to_date" value="{{ $request->to_date }}" placeholder="From Date Filter" />
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
@@ -49,7 +67,7 @@
             @endif
 
             <div class="table-responsive">
-                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered table-hover datatable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -93,7 +111,6 @@
                     </tbody>
                 </table>
             </div>
-            {{ $events->render() }}
         </div>
     </div>
 

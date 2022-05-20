@@ -24,7 +24,15 @@ class AnnouncementController extends Controller
             $announcements->where('status', $request->status);
         }
 
-        $announcements = $announcements->latest()->simplePaginate();
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $announcements->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $announcements->whereDate('created_at', '<=', $request->to_date);
+        }
+
+        $announcements = $announcements->where('user_id', auth()->user()->id)->latest()->get();
 
         return view('users.announcements.index', compact('announcements', 'request'));
     }

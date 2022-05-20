@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\CsvExport;
+use App\Helpers\Export;
 use App\Models\Article;
 use App\Models\CareHomeContact;
 use App\Models\Contact;
@@ -59,12 +59,20 @@ class UserController extends Controller
             $contacts->where('email', 'like', '%' . $request->email . '%');
         }
 
-        $contacts = $contacts->latest()->simplePaginate();
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $contacts->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $contacts->whereDate('created_at', '<=', $request->to_date);
+        }
+
+        $contacts = $contacts->latest()->get();
 
         return view('users.contact-us', compact('contacts', 'request'));
     }
 
-    public function users(Request $request, $export = 0)
+    public function users(Request $request)
     {
         $users = User::whereHas('role', function ($r) {
             $r->where('name', '!=', 'admin');
@@ -82,15 +90,19 @@ class UserController extends Controller
             $users->where('phone', 'like', '%' . $request->phone . '%');
         }
 
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $users->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $users->whereDate('created_at', '<=', $request->to_date);
+        }
+
         if ($request->has('approved') && !is_null($request->approved)) {
             $users->where('approved', $request->approved);
         }
 
-        if ($export) {
-            return $users;
-        }
-
-        $users = $users->with(['role'])->latest()->simplePaginate();
+        $users = $users->with(['role'])->latest()->get();
 
         return view('users.users', compact('users', 'request'));
     }
@@ -117,8 +129,6 @@ class UserController extends Controller
             'avatar' => ['nullable', 'mimes:jpg,jpeg,bmp,png,gif'],
         ];
 
-
-
         if ($role == 'individual') {
             $rules += [
                 'gender' => ['required', 'in:male,female', 'max:255'],
@@ -135,9 +145,11 @@ class UserController extends Controller
         if ($role == 'carehome') {
             $rules += [
                 'elderlies_number' => ['required', 'string', 'max:255'],
-                'establishment_date' => ['required', 'string', 'date', 'max:255'],
+                'establishment_date' => ['required', 'string', 'date', 'max:255', 'before:' . Carbon::now()->subDay()],
                 'bio' => ['required', 'string', 'max:10000'],
                 'short_description' => ['required', 'string', 'max:500'],
+                'city' => ['required', 'string', 'max:255'],
+                'street' => ['required', 'string', 'max:255'],
             ];
         }
 
@@ -165,6 +177,8 @@ class UserController extends Controller
             $userCarehome->establishment_date = $request->establishment_date;
             $userCarehome->bio = $request->bio;
             $userCarehome->short_description = $request->short_description;
+            $userCarehome->city = $request->city;
+            $userCarehome->street = $request->street;
             $userCarehome->save();
         }
 
@@ -212,7 +226,7 @@ class UserController extends Controller
             ];
         }
 
-        CsvExport::put($array_data);
+        Export::pdf($array_data);
         return redirect()->back();
     }
 }

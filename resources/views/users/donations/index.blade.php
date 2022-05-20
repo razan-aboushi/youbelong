@@ -6,11 +6,6 @@
             <div class="float-left">
                 <h6 class="m-0 font-weight-bold text-primary">Donations</h6>
             </div>
-            <div class="float-right">
-                <a class="btn btn-warning btn-sm @if (count($donations) == '0') disabled @endif" href="{{ route('donations.export') }}{{ ($request ? "?". http_build_query($request->query()) : '') }}">
-                    Export
-                </a>
-            </div>
         </div>
         <div class="card-body">
             <div class="card-filter mb-3">
@@ -33,6 +28,24 @@
                                 <option value="0" @if ($request->status == '-1') selected @endif>Rejected</option>
                             </select>
                         </div>
+
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">From</span>
+                                </div>
+                                <input type="date" class="form-control" name="from_date" value="{{ $request->from_date }}" placeholder="From Date Filter" />
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-3 mb-md-0 mb-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">To</span>
+                                </div>
+                                <input type="date" class="form-control" name="to_date" value="{{ $request->to_date }}" placeholder="From Date Filter" />
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
@@ -52,7 +65,7 @@
             @endif
 
             <div class="table-responsive">
-                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered table-hover datatable-export" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -60,7 +73,6 @@
                             <th>Carehome</th>
                             <th>Payment Method</th>
                             <th>Amount</th>
-                            <th>Status</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -70,36 +82,25 @@
                             <th>Carehome</th>
                             <th>Payment Method</th>
                             <th>Amount</th>
-                            <th>Status</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @forelse ($donations as $donate)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $donate->user->name }}</td>
+                                <td>{{ $donate->user->name ?? 'Anonymes' }}</td>
                                 <td>{{ $donate->paymentAccount->user->name }}</td>
                                 <td>{{ $donate->paymentAccount->paymentMethod->name }}</td>
                                 <td>{{ $donate->amount . " JOD"}}</td>
-                                <td>
-                                    @if ($donate->status == '0')
-                                        Pending
-                                    @elseif ($donate->status == '1')
-                                        Approved
-                                    @elseif ($donate->status == '-1')
-                                        Rejected
-                                    @endif
-                               </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="6">No data available!</td>
+                                <td colspan="5">No data available!</td>
                             </tr>
                         @endforelse
                     </tbody>
                 </table>
             </div>
-            {{ $donations->render() }}
         </div>
     </div>
 

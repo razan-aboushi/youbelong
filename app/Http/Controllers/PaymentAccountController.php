@@ -25,7 +25,15 @@ class PaymentAccountController extends Controller
             $payment_accounts->where('status', $request->status);
         }
 
-        $payment_accounts = $payment_accounts->with(['paymentMethod'])->latest()->simplePaginate();
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $payment_accounts->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $payment_accounts->whereDate('created_at', '<=', $request->to_date);
+        }
+
+        $payment_accounts = $payment_accounts->with(['paymentMethod'])->latest()->get();
 
         return view('users.payment-accounts.index', compact('payment_accounts', 'request'));
     }

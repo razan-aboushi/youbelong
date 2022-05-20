@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'role' => ['required', 'in:' . implode(',', $available_roles)],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required', 'numeric','digits_between:10,14'],
+            'phone' => ['required', 'numeric', 'digits_between:10,14'],
             'address' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
@@ -77,7 +77,9 @@ class RegisterController extends Controller
             if ($data['role'] == 'carehome') {
                 $rules += [
                     'elderlies_number' => ['required', 'string', 'max:255'],
-                    'establishment_date' => ['required', 'string', 'date', 'max:255'],
+                    'establishment_date' => ['required', 'string', 'date', 'max:255', 'before:' . Carbon::now()->subDay()],
+                    'city' => ['required', 'string', 'max:255'],
+                    'street' => ['required', 'string', 'max:255'],
                 ];
             }
         }
@@ -103,6 +105,8 @@ class RegisterController extends Controller
                 'user_id' => $userObj->id,
                 'elderlies_number' => $data['elderlies_number'],
                 'establishment_date' => $data['establishment_date'],
+                'city' => $data['city'],
+                'street' => $data['street'],
             ]);
         }
 

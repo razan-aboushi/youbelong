@@ -24,7 +24,15 @@ class EventController extends Controller
             $events->where('status', $request->status);
         }
 
-        $events = $events->withCount('users')->latest()->simplePaginate();
+        if ($request->has('from_date') && !is_null($request->from_date)) {
+            $events->whereDate('created_at', '>=', $request->from_date);
+        }
+
+        if ($request->has('to_date') && !is_null($request->to_date)) {
+            $events->whereDate('created_at', '<=', $request->to_date);
+        }
+
+        $events = $events->withCount('users')->latest()->get();
 
         return view('users.events.index', compact('events', 'request'));
     }
